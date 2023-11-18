@@ -1,7 +1,7 @@
-_: {
+{
   services.polybar = {
   enable = true;
-  script = ''pkill polybar && polybar'';
+  script = ''pkill (polybar && polybar'';
   config = {
     "colors" = {
     background = #282A2E;
