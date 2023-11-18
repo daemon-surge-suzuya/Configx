@@ -123,7 +123,7 @@
       "bar/example" = {
         width = "100%";
         height = "24pt";
-        radius = "5";
+        radius = "0";
         background = "${colors.mocha-crust}";
         foreground = "${colors.mocha-text}";
         line-size = "3pt";
