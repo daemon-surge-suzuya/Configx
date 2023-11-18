@@ -70,7 +70,7 @@
       cmd_duration = {
       format = "[$duration](fg:peach)";
       style = "yellow";
-      min_time = 5000;
+      min_time = 1000;
       };
     };
   };
