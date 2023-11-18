@@ -41,7 +41,6 @@
         "$sudo"
         "$nix_shell"
         "\${custom.direnv}"
-        "$time"
         "$cmd_duration"
       ];
       continuation_prompt = "▶ ";
@@ -68,11 +67,8 @@
         format = "[ ](red)";
         disabled = false;
       };
-      time = {
-      format = "[](bg:$style)[ $time](fg:white bg:$style)[](fg:$red)";
-      };
       cmd_duration = {
-      format = "[$duration]($style) ";
+      format = "[$duration](fg:peach)";
       style = "yellow";
       min_time = 5000;
       };
