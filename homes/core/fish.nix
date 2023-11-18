@@ -10,7 +10,6 @@ in
     home.packages = [
       bat
       commitizen
-      fd
       fzf
       zoxide
     ];
@@ -75,26 +74,14 @@ in
       interactiveShellInit = ''
         set -g async_prompt_functions _pure_prompt_git
         starship init fish | source
-        ${_ any-nix-shell} fish --info-right | source
-        ${_ zoxide} init fish | source
         ${_ direnv} hook fish | source
       '';
 
       shellAliases = {
-        "c" = "${_ commitizen} commit -- -s"; # Commit with Signed-off
+        "cd" = "${_ z}"
         "cat" = "${_ bat}";
-        "config" = "cd ~/.config/nixos";
-        "dla" = "${_ yt-dlp} --extract-audio --audio-format mp3 --audio-quality 0 -P '${config.home.homeDirectory}/Media/Audios'"; # Download Audio
-        "dlv" = "${_ yt-dlp} --format 'best[ext=mp4]' -P '${config.home.homeDirectory}/Media/Videos'"; # Download Video
-        "lg" = "lazygit";
         "nb" = "nix-build -E \'with import <nixpkgs> { }; callPackage ./default.nix { }\'";
-        "nv" = "nvim";
-        "nr" = "${_ nixpkgs-review}";
         "mkdir" = "mkdir -p";
-        "g" = "git";
-        "v" = "vim";
-        "..." = "cd ../..";
-        ".." = "cd ..";
       };
 
       plugins = [
@@ -119,5 +106,5 @@ in
       ];
     };
 
-    programs.man.generateCaches = true; # For fish completions
+    programs.man.generateCaches = true;
   }
