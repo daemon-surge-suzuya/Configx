@@ -1,6 +1,5 @@
 _: {
   imports = [
-    ./core
-    ./editor
+  ./nvim
   ];
 }
