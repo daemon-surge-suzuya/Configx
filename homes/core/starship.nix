@@ -42,6 +42,7 @@
         "$nix_shell"
         "\${custom.direnv}"
         "$time"
+        "$cmd_duration"
       ];
       continuation_prompt = "▶ ";
       command_timeout = 1000;
@@ -69,6 +70,11 @@
       };
       time = {
       format = "[](bg:$style)[ $time](fg:white bg:$style)[](fg:$red)";
+      };
+      cmd_duration = {
+      format = "[$duration]($style) ";
+      style = "yellow";
+      min_time = 5000;
       };
     };
   };
