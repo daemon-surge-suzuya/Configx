@@ -7,17 +7,7 @@
 
     # Pure Presets
     settings = {
-      add_newline = false;
-      format = lib.concatStrings [
-        "$cmd_duration"
-        "$git_metrics"
-        "$git_state"
-        "$git_branch"
-        "$line_break"
-        "$status"
-        "$directory"
-        "$character"
-      ];
+      add_newline = true;
       right_format = lib.concatStrings [
         "$sudo"
         "$nix_shell"
@@ -26,21 +16,21 @@
       ];
       continuation_prompt = "▶ ";
       command_timeout = 1000;
-      # right_format = "$all";
-      directory = {
-        style = "blue";
-      };
       character = {
-        success_symbol = "[λ](purple)";
-        error_symbol = "[λ](red)";
+      mauve = "#c6a0f6";
+      maroon = "#ee99a0";
+      success_symbol ="[[♥]($mauve) ❯]($maroon)";
+      error_symbol = "[❯](red)";
+      vimcmd_symbol = "[❮](green)";
       };
       git_branch = {
-        style = "bright-black";
-        format = "[$branch]($style)";
+      symbol = " ";
+      format = "via [$symbol$branch]($style)";
+      style = "bold mauve";
       };
       git_state = {
         format = "\([$state( $progress_current/$progress_total)]($style)\)";
-        style = "bright-black";
+        cherry_pick = "[🍒 PICKING](bold red)";
       };
       nix_shell = {
         format = "[󱄅 ](cyan)";
@@ -50,10 +40,8 @@
         format = "[ ](red)";
         disabled = false;
       };
-      cmd_duration = {
-        format = "[$duration]($style) ";
-        style = "yellow";
-        min_time = 5000;
+      time = {
+      format = "[](bg:$style)[ $time](fg:white bg:$style)[](fg:$red)";
       };
     };
   };

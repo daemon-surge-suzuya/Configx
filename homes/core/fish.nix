@@ -74,8 +74,7 @@ in
 
       interactiveShellInit = ''
         set -g async_prompt_functions _pure_prompt_git
-        set pure_symbol_prompt "λ"
-
+        starship init fish | source
         ${_ any-nix-shell} fish --info-right | source
         ${_ zoxide} init fish | source
         ${_ direnv} hook fish | source
