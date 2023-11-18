@@ -2,6 +2,7 @@ _: {
   services.dunst = {
   enable = true;
   settings = {
+  global = {
     monitor = 0;
     follow = "mouse";
     width = 350;
@@ -49,6 +50,27 @@ _: {
     mouse_left_click = "do_action, close_current";
     mouse_middle_click = "do_action, close_current";
     mouse_right_click = "close_all";
+  };  
+  experimental = {
+  per_monitor_dpi = false;
+  };
+  urgency_low = {
+    background = "#181825AA";
+    foreground = "#f4b8e4";
+    timeout = 10;  
+  };
+  urgency_normal = {
+    background = "#181825AA";
+    foreground = "#f4b8e4";
+    timeout = 10;
+  };
+  urgency_critical = {
+    background = "#181825AA";
+    foreground = "#F38BA8";
+    frame_color = "#F38BA8";
+    timeout = -1;
+    format = "<b>%s</b>\n%b";
+  };
   };
   };
 }
