@@ -4,5 +4,6 @@ _: {
   ./zathura.nix
   ./alacritty.nix
   ./dunst
+  ./mpv.nix
   ];
 }
