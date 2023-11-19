@@ -3,6 +3,6 @@ _: {
     ./core
     ./graphical
     ./editor
-    # ./virtualisation
+    ./virtualization
   ];
 }
