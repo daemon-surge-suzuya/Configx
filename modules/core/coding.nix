@@ -19,7 +19,6 @@ in
   rust-analyzer
 
   # Etc
-  rustup
   rustfmt
 
   ];
