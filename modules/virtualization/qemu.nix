@@ -1,10 +1,23 @@
-{ config, pkgs, ...}:
+{pkgs, ...}: {
+  virtualisation = {
+    libvirtd = {
+      enable = true;
+      qemu = {
+        verbatimConfig = ''
+          nvram = [ "${pkgs.OVMF}/FV/OVMF.fd:${pkgs.OVMF}/FV/OVMF_VARS.fd" ]
+        '';
+      };
+    };
+    spiceUSBRedirection.enable = true;
+  };
 
-{
-  home.packages = with pkgs; [
+  environment = {
+    systemPackages = with pkgs; [
       virt-manager
       virt-viewer
       qemu
-      gvfs
-  ];
+      OVMF
+      gvfs 
+    ];
+  };
 }
