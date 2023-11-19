@@ -148,7 +148,7 @@
         content = " ";
         content-foreground = "${colors.mocha-pink}";
         content-padding = 2;
-        # click-left = brave "https://search.nixos.org/packages";
+        click-left = "brave 'https://search.nixos.org/packages'";
       };
 
       "module/bspwm" = {
