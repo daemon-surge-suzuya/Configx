@@ -25,7 +25,7 @@ _: {
       cob = "checkout -b";
       f = "fetch -p";
       cs = "commit -s";
-      c = "commit -m ";
+      c = "commit -m";
       cl = "clone";
       ba = "branch -a";
       bd = "branch -d";
