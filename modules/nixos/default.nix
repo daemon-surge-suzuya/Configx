@@ -6,6 +6,9 @@
   
   nixpkgs.config = {
     allowUnfree = true;
+    permittedInsecurePackages = [
+    "electron-24.8.6"
+  ];
   };
 
 
@@ -23,6 +26,7 @@
       pavucontrol
       ripgrep
       picom
+      obsidian
       nitrogen
       i3lock-fancy
       bspwm
@@ -46,38 +50,20 @@
     };
   };
 
-  nh = {
-    enable = true;
-    clean.enable = true;
-    clean.extraArgs = "--keep-since 3d --keep 3";
-  };
-
   nix = {
-    nixPath = ["nixpkgs=flake:nixpkgs"]; # https://ayats.org/blog/channels-to-flakes/
-
-    package = inputs.nix-super.packages.${pkgs.system}.nix;
-
     settings = {
-      # Prevent impurities in builds
       sandbox = true;
 
       experimental-features = [
         "auto-allocate-uids"
         "ca-derivations"
-        # "configurable-impure-env"
         "flakes"
         "no-url-literals"
         "nix-command"
-        "parse-toml-timestamps"
-        "read-only-local-store"
       ];
-      # Give root user and wheel group special Nix privileges.
-      trusted-users = ["root" "@wheel"];
-      allowed-users = ["@wheel"];
-
-
+    auto-optimise-store = true;
     };
-
+    
     optimise.automatic = true;
   };
 
