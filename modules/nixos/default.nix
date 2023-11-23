@@ -36,6 +36,7 @@
       obs-studio
       openh264
       librewolf
+      spotify
       redshift
       discord
       ranger

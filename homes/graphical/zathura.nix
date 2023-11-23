@@ -42,5 +42,14 @@ _: {
     highlight-active-color = "#F5C2E7";
   
   };
+  mappings = {
+  "u" = "scroll half-up";
+  "d" = "scroll half-down";
+  "D" = "toggle_page_mode";
+  "r" = "rotate";
+  "i" = "zoom in";
+  "o" = "zoom out";
+  "R" = "recolor";
+  };
   };
 }
