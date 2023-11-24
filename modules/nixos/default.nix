@@ -37,6 +37,7 @@
       openh264
       librewolf
       spotify
+      ffmpeg
       redshift
       discord
       ranger

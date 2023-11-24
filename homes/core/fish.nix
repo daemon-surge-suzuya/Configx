@@ -27,6 +27,10 @@ in
         "mkdir" = "mkdir -p";
       };
 
+      functions = {
+        conv-aud = ''ffmpeg -i $argv[1] -vn -y $argv[2]'';
+      };
+
       plugins = [
         {
           name = "pure";
