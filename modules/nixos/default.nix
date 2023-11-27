@@ -29,7 +29,7 @@
       obsidian
       nitrogen
       i3lock-fancy
-      bspwm
+      # bspwm
       sxhkd
       brightnessctl
       flameshot
@@ -38,6 +38,8 @@
       librewolf
       spotify
       ffmpeg
+      sxiv
+      xwinwrap
       redshift
       discord
       ranger
