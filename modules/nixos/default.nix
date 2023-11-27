@@ -4,6 +4,10 @@
   ...
 }: {
   
+  # For some reason even after enabling bspwm and xserver through home-manager, I couldn't start a session after the reboot so had to add these two lines 
+  services.xserver.windowManager.bspwm.enable = true;
+  services.xserver.displayManager.sddm.enable = true;
+
   nixpkgs.config = {
     allowUnfree = true;
     permittedInsecurePackages = [
