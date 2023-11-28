@@ -12,3 +12,10 @@ Using [Nix](https://nixos.org/) and [Home-Manager](https://github.com/nix-commun
 
 ![Home-Page](./assets/Home-Page.png)
 
+## Installation
+
+Make sure that you have [Home-Manager](https://nixos.wiki/wiki/Home_Manager) installed.
+
+Copy this directory to `~/.config/home-manager`
+
+Run `home-manager switch`
