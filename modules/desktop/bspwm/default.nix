@@ -1,4 +1,8 @@
 _: {
+imports = [ 
+   ./sxhkd
+];
+
  xsession = {
  enable = true;
  windowManager.bspwm = {
