@@ -8,11 +8,14 @@ _: {
   shell = {
   program = "fish";
   };
+  
   colors = {
+  
   primary = {
   background = "0x0e0913";
   foreground = "0xa7c3d5";
   };
+  
   normal = {
   black = "0x2A368C";
   red = "0x252E93";
@@ -23,6 +26,7 @@ _: {
   cyan = "0xa7c3d5";
   white = "0x748895";
   };
+  
   bright = {
   black = "0x2A368C";
   red = "0x252E93";

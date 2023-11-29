@@ -3,7 +3,6 @@
 {
   imports = [
   ./homes
-  ./modules/desktop/bspwm
   ]; 
   
   home.username = "moon";

@@ -52,7 +52,7 @@
       };
       git_branch = {
       symbol = " ";
-      format = "via [$symbol$branch]($style)";
+      format = "via [$symbol$branch]($style) ";
       style = "bold mauve";
       };
       git_state = {
