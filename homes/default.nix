@@ -3,5 +3,6 @@ _: {
     ./core
     ./graphical
     ./editor
+    ./desktop
   ];
 }

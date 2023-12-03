@@ -39,6 +39,7 @@ _: {
       st = "status -sb";
       p = "push";
       pl = "pull";
+      gs = "config credential.helper store";
 
       # reset
       soft = "reset --soft";

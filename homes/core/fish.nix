@@ -22,6 +22,7 @@ in
       '';
 
       shellAliases = {
+        "f" = "fzf | xargs -r $EDITOR";
         "cat" = "${_ bat}";
         "nb" = "nix-build -E \'with import <nixpkgs> { }; callPackage ./default.nix { }\'";
         "mkdir" = "mkdir -p";

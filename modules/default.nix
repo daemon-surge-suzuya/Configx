@@ -4,6 +4,5 @@ _: {
   ./thunar
   ./nixos
   ./hardware
-  ./desktop
   ];
 }

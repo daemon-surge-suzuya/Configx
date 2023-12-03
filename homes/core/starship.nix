@@ -46,7 +46,7 @@
       continuation_prompt = "▶ ";
       command_timeout = 1000;
       character = {
-      success_symbol = "[[♥](mauve) ❯](maroon)";
+      success_symbol = "[[♥](blue) ❯](lavender)";
       error_symbol = "[❯](red)";
       vimcmd_symbol = "[❮](green)";
       };
