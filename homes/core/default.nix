@@ -5,5 +5,6 @@ _: {
     ./git.nix
     ./starship.nix
     ./coding.nix
+    ./search.nix
   ];
 }

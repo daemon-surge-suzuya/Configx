@@ -7,10 +7,6 @@
   _ = lib.getExe;
 in
   with pkgs; {
-    home.packages = [
-      bat
-      fzf
-    ];
 
     programs.fish = {
       enable = true;
@@ -22,10 +18,6 @@ in
       '';
 
       shellAliases = {
-        "fd" = "fzf | xargs -r $EDITOR";
-        "fp" = "fzf | xargs -r zathura";
-        "fv" = "fzf | xargs -r mpv";
-        "cat" = "${_ bat}";
         "nb" = "nix-build -E \'with import <nixpkgs> { }; callPackage ./default.nix { }\'";
         "mkdir" = "mkdir -p";
         "lg" = "nix profile history --profile /nix/var/nix/profiles/system --extra-experimental-features nix-command";
