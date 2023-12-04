@@ -11,7 +11,6 @@
 
   nixpkgs.overlays = [
       (final: prev: {
-      st = prev.st.overrideAttrs (old: { src = /home/moon/1TB/GitHub/Suckless/st ;});
       dwm = prev.dwm.overrideAttrs (old: { src = /home/moon/1TB/GitHub/Suckless/dwm ;});
       dmenu = prev.dmenu.overrideAttrs (old: { src = /home/moon/1TB/GitHub/Suckless/dmenu ;});
       dwmblocks = prev.dwmblocks.overrideAttrs (old: { src = /home/moon/1TB/GitHub/Suckless/dwmblocks ;});
@@ -46,13 +45,13 @@
       };
     }))
 
-      (st.overrideAttrs (oldAttrs: rec {
-      patches = [
-        /home/moon/1TB/GitHub/Suckless/st/patches/st-blinking_cursor.diff
-        /home/moon/1TB/GitHub/Suckless/st/patches/st-alpha.diff 
-      ];
-      }))
-
+      # (st.overrideAttrs (oldAttrs: rec {
+      # patches = [
+      #   /home/moon/1TB/GitHub/Suckless/st/patches/st-blinking_cursor.diff
+      #   /home/moon/1TB/GitHub/Suckless/st/patches/st-alpha.diff 
+      # ];
+      # }))
+      #
       (dwm.overrideAttrs (oldAttrs: rec {
       patches = [
         # /home/moon/1TB/GitHub/Suckless/dwm/patches/dwm-alwayscenter.diff

@@ -5,5 +5,6 @@ _: {
   ./alacritty.nix
   ./dunst
   ./mpv.nix
+  ./feh.sh
   ];
 }
