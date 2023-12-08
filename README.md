@@ -16,6 +16,6 @@ Using [Nix](https://nixos.org/) and [Home-Manager](https://github.com/nix-commun
 
 Make sure that you have [Home-Manager](https://nixos.wiki/wiki/Home_Manager) installed.
 
-Copy this directory to `~/.config/home-manager`
+Copy this repository to `~/.config/home-manager`
 
 Run `home-manager switch`
