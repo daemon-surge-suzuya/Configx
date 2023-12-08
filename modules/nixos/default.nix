@@ -2,7 +2,12 @@
   pkgs,
   inputs,
   ...
-}: {
+}: 
+
+let 
+lib = pkgs.lib;
+in
+{
   
   # For some reason even after enabling bspwm and xserver through home-manager, I couldn't start a session after the reboot so had to add these two lines 
   services.xserver.windowManager.bspwm.enable = true;
@@ -24,15 +29,6 @@
   ];
   };
 
-  i18n = {
-    extraLocaleSettings = {
-    LC_MESSAGES = "en_US.UTF-8";
-    LC_TIME = "en_US.UTF-8";
-  };
-    defaultLocale = "en_US.UTF-8";
-  
-  };
-
   environment = {
     systemPackages = with pkgs; [
 
@@ -45,34 +41,29 @@
       };
     }))
 
-      # (st.overrideAttrs (oldAttrs: rec {
-      # patches = [
-      #   /home/moon/1TB/GitHub/Suckless/st/patches/st-blinking_cursor.diff
-      #   /home/moon/1TB/GitHub/Suckless/st/patches/st-alpha.diff 
-      # ];
-      # }))
-      #
-      (dwm.overrideAttrs (oldAttrs: rec {
-      patches = [
-        # /home/moon/1TB/GitHub/Suckless/dwm/patches/dwm-alwayscenter.diff
-        # /home/moon/1TB/GitHub/Suckless/dwm/patches/dwm-autostart.diff
-      ];
-      }))
+     # (dwm.overrideAttrs (oldAttrs: rec {
+     #  patches = [
+     #    /home/moon/1TB/GitHub/Suckless/dwm/patches/dwm-alwayscenter.diff
+     #    /home/moon/1TB/GitHub/Suckless/dwm/patches/dwm-autostart.diff
+     #  ];
+     #  }))
+
+     # Imports
+     (pkgs.callPackage /home/moon/.config/Bin/NixOs/finder.nix {})
+     (pkgs.callPackage /home/moon/.config/Bin/NixOs/unpack.nix {})
 
       curl
       dmenu
       pavucontrol
-      ripgrep
       picom
       obsidian
       nitrogen
       i3lock-fancy
       sxhkd
-      font-awesome
       brightnessctl
       flameshot
+      file
       obs-studio
-      openh264
       librewolf
       spotify
       ffmpeg
@@ -84,7 +75,6 @@
       cmus
       ueberzug
       brave
-      # dwmblocks
       iw
     ];
 
