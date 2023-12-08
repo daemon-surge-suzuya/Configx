@@ -51,6 +51,11 @@ in
      # Imports
      (pkgs.callPackage /home/moon/.config/Bin/NixOs/finder.nix {})
      (pkgs.callPackage /home/moon/.config/Bin/NixOs/unpack.nix {})
+     (pkgs.callPackage /home/moon/.config/Bin/NixOs/pack.nix {})
+     (pkgs.callPackage /home/moon/.config/Bin/NixOs/dwmbar.nix {})
+     (pkgs.callPackage /home/moon/.config/Bin/NixOs/video2wav.nix {})
+     (pkgs.callPackage /home/moon/.config/Bin/NixOs/c.nix {})
+     (pkgs.callPackage /home/moon/.config/Bin/NixOs/ch-mac.nix {})
 
       curl
       dmenu
