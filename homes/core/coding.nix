@@ -9,17 +9,11 @@ in
   };
 
   home.packages = with pkgs; [
-  # Programming Languages
-  rustc
-
-  # Package Manager
-  cargo
-
-  # Language Servers
-  rust-analyzer
-
-  # Etc
-  rustfmt
+  
+  # rustc
+  # cargo
+  # rust-analyzer
+  # rustfmt
 
   ];
 }

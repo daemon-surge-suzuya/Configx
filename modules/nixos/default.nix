@@ -10,9 +10,16 @@ in
 {
   
   # For some reason even after enabling bspwm and xserver through home-manager, I couldn't start a session after the reboot so had to add these two lines 
-  services.xserver.windowManager.bspwm.enable = true;
+  # services.xserver.windowManager.bspwm.enable = true;
   services.xserver.displayManager.sddm.enable = true;
   services.xserver.windowManager.dwm.enable = true;
+  programs.hyprland.enable = true;
+  # programs.hyprland.xwayland.enable = true;
+
+  # programs.hyprland = {
+    # enable = true;
+    # xwayland.enable = true;
+  # };
 
   nixpkgs.overlays = [
       (final: prev: {
@@ -86,6 +93,8 @@ in
     sessionVariables = {
       DIRENV_WARN_TIMEOUT = "24h";
       DIRENV_LOG_FORMAT = "";
+      # WLR_NO_HARDWARE_CURSOR = "1";
+      # NIXOS_OZONE_WL = "1";
     };
   };
 

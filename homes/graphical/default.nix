@@ -6,5 +6,6 @@ _: {
   ./dunst
   ./mpv.nix
   ./feh.sh
+  ./kitty.nix
   ];
 }
