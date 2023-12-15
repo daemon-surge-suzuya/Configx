@@ -84,7 +84,6 @@
     sessionVariables = {
       DIRENV_WARN_TIMEOUT = "24h";
       DIRENV_LOG_FORMAT = "";
-      FLAKE = "/home/moon/tester/flake.nix";
     };
   };
 
@@ -119,6 +118,21 @@
     };
     
     optimise.automatic = true;
+  };
+
+  # Etc
+  programs.adb.enable = true;
+  programs.fish.enable = true;
+  services.flatpak.enable = true;
+  services.printing.enable = true;
+  security.rtkit.enable = true;
+
+  # steam
+
+  programs.steam = {
+    enable = false;
+    removePlay.openFirewall = true;
+    dedicatedServer.openFirewall = true;
   };
 
 }
