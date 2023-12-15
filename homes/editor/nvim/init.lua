@@ -20,4 +20,5 @@ if astronvim.default_colorscheme then
   end
 end
 
+require('presence')
 require("astronvim.utils").conditional_func(astronvim.user_opts("polish", nil, false), true)
