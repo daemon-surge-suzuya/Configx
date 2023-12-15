@@ -4,9 +4,6 @@
   ...
 }: 
 
-let 
-lib = pkgs.lib;
-in
 {
   
   # For some reason even after enabling bspwm and xserver through home-manager, I couldn't start a session after the reboot so had to add these two lines 
@@ -14,12 +11,6 @@ in
   services.xserver.displayManager.sddm.enable = true;
   services.xserver.windowManager.dwm.enable = true;
   programs.hyprland.enable = true;
-  # programs.hyprland.xwayland.enable = true;
-
-  # programs.hyprland = {
-    # enable = true;
-    # xwayland.enable = true;
-  # };
 
   nixpkgs.overlays = [
       (final: prev: {
@@ -32,7 +23,7 @@ in
   nixpkgs.config = {
     allowUnfree = true;
     permittedInsecurePackages = [
-    "electron-24.8.6"
+    "electron-25.9.0"
   ];
   };
 
@@ -82,20 +73,35 @@ in
       sxiv
       xwinwrap
       redshift
-      discord
       ranger
       cmus
       ueberzug
       brave
       iw
+      discord
     ];
 
     sessionVariables = {
       DIRENV_WARN_TIMEOUT = "24h";
       DIRENV_LOG_FORMAT = "";
-      # WLR_NO_HARDWARE_CURSOR = "1";
-      # NIXOS_OZONE_WL = "1";
+      FLAKE = "/home/moon/tester/flake.nix";
     };
+  };
+
+  security.pam.services.waylock = {
+    text = ''
+      auth include login
+    '';
+  };
+
+  fonts = {
+      packages = with pkgs; [
+        noto-fonts
+        noto-fonts-emoji
+        font-awesome
+        source-han-sans
+        (nerdfonts.override { fonts = [ "Meslo" ]; })
+      ];
   };
 
   nix = {

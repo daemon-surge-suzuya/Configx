@@ -2,12 +2,21 @@
 
 {
 
+imports = [
 
-home.packages = [
+  ./waybar
 
-pkgs.grimblast
-pkgs.wlsunset
-pkgs.swaybg
+];
+
+
+home.packages = with pkgs; [
+
+grimblast
+wlsunset
+swaybg
+pamixer
+waybar
+waylock
 
 ];
 

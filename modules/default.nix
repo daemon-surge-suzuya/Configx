@@ -3,7 +3,6 @@ _: {
   ./bootloader
   ./Extras
   ./hardware
-  ./i18n
   ./networking
   ./nixos
   ./programs
