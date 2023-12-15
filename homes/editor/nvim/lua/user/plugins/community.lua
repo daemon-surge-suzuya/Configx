@@ -16,4 +16,22 @@ return {
       return opts
     end,
   },
+  {
+      "epwalsh/obsidian.nvim",
+  version = "*",  -- recommended, use latest release instead of latest commit
+  lazy = true,
+  ft = "markdown",
+  dependencies = {
+    "nvim-lua/plenary.nvim",
+  },
+  opts = {
+    workspaces = {
+      {
+        name = "personal",
+        path = "~/1TB/GitHub/Notes",
+      },
+    },
+
+  },
+  }
 }

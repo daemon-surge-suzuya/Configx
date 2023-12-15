@@ -5,7 +5,6 @@ _: {
   ./hardware
   ./networking
   ./nixos
-  ./programs
   ./thunar
   ./user-account
   # ./virtualization

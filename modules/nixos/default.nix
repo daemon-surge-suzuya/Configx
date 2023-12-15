@@ -131,8 +131,8 @@
 
   programs.steam = {
     enable = false;
-    removePlay.openFirewall = true;
-    dedicatedServer.openFirewall = true;
+    remotePlay.openFirewall = true; 
+    dedicatedServer.openFirewall = true; 
   };
 
 }
