@@ -2,6 +2,10 @@
 
 let 
 _ = lib.getExe;
+catdoc = pkgs.catdoc.overrideAttrs { meta.mainProgram = "catdoc"; };
+libcdio = pkgs.libcdio.overrideAttrs { meta.mainProgram = "iso-info"; };
+odt2txt = pkgs.odt2txt.overrideAttrs { meta.mainProgram = "odt2txt"; };
+ffmpegthumbnailer = pkgs.ffmpegthumbnailer.overrideAttrs { meta.mainProgram = "ffmpegthumbnailer"; };
 in
 
 with pkgs; {
