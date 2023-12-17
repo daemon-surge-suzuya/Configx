@@ -10,12 +10,30 @@ with pkgs; {
 
     enable = true;
 
+    extraPackages = [
+    
+    rustup
+    rust-analyzer
+    clippy
+    
+    ];
+
+    settings = {
+    
+      theme = "base16_transparent";
+    
+      };
+
     languages = {
 
       language-server.rust-analyzer = {
 
         command = "${_ rust-analyzer}";
-      
+        
+        config.check = {
+        "command" = "${_ clippy}";
+        };
+
       };
 
       language = [{
