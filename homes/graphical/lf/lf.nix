@@ -146,7 +146,7 @@ with pkgs; {
             ${_ exiftool} "$1"
             ;;
         *.pdf)
-            [ ! -f "''${CACHE}.jpg" ] && pdftoppm -jpeg -f 1 -singlefile "$1" "$CACHE"
+            [ ! -f "''${CACHE}.jpg" ] && ${_ poppler_utils} -jpeg -f 1 -singlefile "$1" "$CACHE"
             preview_image "''${CACHE}.jpg" "$2" "$3" "$4" "$5"
             ;;
         *.epub)
@@ -219,8 +219,6 @@ with pkgs; {
   map y copy
   map <enter> open
   map R reload
-  map mf mkfile
-  map md mkdir
   map C clear
 
   map gD cd ~/documents

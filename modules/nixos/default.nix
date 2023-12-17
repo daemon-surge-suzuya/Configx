@@ -73,7 +73,6 @@
       sxiv
       xwinwrap
       redshift
-      ranger
       cmus
       ueberzug
       brave
