@@ -6,7 +6,7 @@ _: {
     border-radius: 0;
     font-family: Cartograph CF Nerd Font, monospace;
     font-weight: bold;
-    font-size: 17px;
+    font-size: 19px;
     min-height: 0;
 }
 
@@ -99,6 +99,7 @@ tooltip {
 #custom-waller,
 #window,
 #clock,
+#battery,
 #custom-weather {
     border-left: 1px solid #181825;
 }
@@ -112,7 +113,6 @@ tooltip {
 #custom-waller {
     color: #f38ba8;
     border-radius: 0px 10px 10px 0px;
-    margin-left: 0px;
 }
 
 #window {
@@ -143,6 +143,7 @@ tooltip {
 
 #battery {
     color: #a6e3a1;
+    border-radius: 10px 0px 0px 10px;
 }
   '';
 
