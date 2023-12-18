@@ -89,8 +89,8 @@ tooltip {
 #clock,
 #network,
 #pulseaudio,
+#battery
 #pulseaudio.microphone,
-#battery,
 #custom-weather {
     border-right: 1px solid #181825;
 }
@@ -99,7 +99,6 @@ tooltip {
 #custom-waller,
 #window,
 #clock,
-#battery,
 #custom-weather {
     border-left: 1px solid #181825;
 }
@@ -144,8 +143,6 @@ tooltip {
 
 #battery {
     color: #a6e3a1;
-    border-radius: 0px 10px 10px 0px;
-    margin-right: 0px;
 }
   '';
 
