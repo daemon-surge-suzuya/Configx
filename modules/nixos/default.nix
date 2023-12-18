@@ -54,6 +54,7 @@
      (pkgs.callPackage /home/moon/.config/Bin/NixOs/video2wav.nix {})
      (pkgs.callPackage /home/moon/.config/Bin/NixOs/c.nix {})
      (pkgs.callPackage /home/moon/.config/Bin/NixOs/ch-mac.nix {})
+     (pkgs.callPackage /home/moon/.config/Bin/NixOs/waller.nix {})
 
       curl
       dmenu

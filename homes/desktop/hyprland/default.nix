@@ -9,16 +9,17 @@ imports = [
 ];
 
 
-home.packages = with pkgs; [
+  home.packages = with pkgs; [
 
-grimblast
-wlsunset
-swaybg
-pamixer
-waybar
-waylock
+  swww
+  grimblast
+  wlsunset
+  swaybg
+  pamixer
+  waybar
+  waylock
 
-];
+  ];
 
 
   wayland.windowManager.hyprland = {

@@ -13,6 +13,7 @@ _: {
     modules-left = [
         "clock"
         "custom/weather"
+        "custom/waller"
     ];
     modules-center = ["hyprland/window"];
     modules-right = [
@@ -105,6 +106,15 @@ _: {
         on-scroll-down = "pamixer --default-source -d 5";
         scroll-step = 5;
     };
+    
+    "custom/waller" = {
+          on-click = "waller -p Wayland -r --path ~/Wallpapers";
+          on-click-middle = "default_wall";
+          on-click-right = "waller -p Wayland -r -a --path ~/Wallpapers/Animated";
+          format = " 󰠖 ";
+          tooltip = false;
+    };
+  
   }];
 
 }

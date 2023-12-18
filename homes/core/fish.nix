@@ -25,6 +25,17 @@ in
 
       functions = {
         conv-aud = ''ffmpeg -i $argv[1] -vn -y $argv[2]'';
+        fi = ''
+                set path (fzf)
+                if test "$path" = ""
+                  else if [ "$path" != "" ] 
+                    if test -d $path
+                     $path 
+                    else
+                    xdg-open $path 
+                  end
+                end
+        '';
       };
 
       plugins = [
