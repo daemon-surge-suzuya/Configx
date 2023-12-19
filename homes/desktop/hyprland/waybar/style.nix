@@ -61,6 +61,7 @@ tooltip {
 #pulseaudio,
 #network,
 #custom-waller,
+#idle_inhibitor,
 #workspaces,
 #tray,
 #backlight {
@@ -87,6 +88,7 @@ tooltip {
 #custom-waller,
 #window,
 #clock,
+#idle_inhibitor,
 #network,
 #pulseaudio,
 #battery
@@ -98,16 +100,22 @@ tooltip {
 #custom-caffeine,
 #custom-waller,
 #window,
+#idle_inhibitor,
 #clock,
 #battery,
 #custom-weather {
     border-left: 1px solid #181825;
 }
 
-#custom-caffeine {
+#idle_inhibitor {
     color: #89dceb;
     border-radius: 10px 0px 0px 10px;
     margin-left: 10px;
+}
+
+#custom-weather {
+    color: #f9e2af;
+    border-radius: 0px 10px 10px 0px;
 }
 
 #custom-waller {
@@ -125,10 +133,6 @@ tooltip {
     color: #fab387;
     border-radius: 10px 0px 0px 10px;
     margin-left: 5px;
-}
-
-#network {
-    color: #f9e2af;
 }
 
 #pulseaudio {

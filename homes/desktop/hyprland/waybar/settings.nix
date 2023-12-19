@@ -13,6 +13,7 @@ _: {
     modules-left = [
         "clock"
         "custom/weather"
+        "idle_inhibitor"
         "custom/waller"
     ];
     modules-center = ["hyprland/window"];
@@ -114,6 +115,15 @@ _: {
           format = " 󰠖 ";
           tooltip = false;
     };
+
+    "idle_inhibitor" = {
+          format = "{icon}";
+          format-icons = {
+            activated = "";
+            deactivated = "";
+          };
+          tooltip = false;
+        };
   
   }];
 
