@@ -1,7 +1,14 @@
 {pkgs, ...}: {
+
+home.packages = with pkgs; [
+
+neovide
+
+];
+
   programs.neovim = {
     enable = true;
-    defaultEditor = true;
+    defaultEditor = false;
     withNodeJs = true;
     withRuby = true;
     withPython3 = true;

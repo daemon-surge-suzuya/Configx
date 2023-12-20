@@ -1,6 +1,11 @@
-_: {
+{ pkgs, ... }: {
 imports = [ 
    ./sxhkd
+];
+home.packages = with pkgs; [
+
+alacritty
+
 ];
 
  xsession = {

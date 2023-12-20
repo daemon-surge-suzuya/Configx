@@ -9,6 +9,7 @@ with pkgs; {
   programs.helix = {
 
     enable = true;
+    defaultEditor = false;
 
     extraPackages = [
     
