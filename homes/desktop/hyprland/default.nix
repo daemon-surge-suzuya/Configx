@@ -11,12 +11,13 @@ imports = [
   home.packages = with pkgs; [
 
   swww
-  grimblast
   wlsunset
-  swaybg
   pamixer
   waybar
   waylock
+  slurp
+  grim
+  swappy
 
   ];
 

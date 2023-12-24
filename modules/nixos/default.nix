@@ -79,6 +79,7 @@
       brave
       iw
       discord
+      protonvpn-cli
     ];
 
     sessionVariables = {

@@ -2,7 +2,7 @@ _: {
   imports = [
   ./polybar.nix
   ./zathura.nix
-  # ./alacritty.nix
+  ./alacritty.nix
   ./dunst
   ./tmux.nix
   ./mpv.nix

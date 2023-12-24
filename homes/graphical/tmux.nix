@@ -7,7 +7,7 @@
       baseIndex = 1;
       keyMode = "vi";
       mouse = true;
-      prefix = "M-a";
+      prefix = "M-b";
       terminal = "tmux-256color";
 
       plugins = with pkgs.tmuxPlugins; [
