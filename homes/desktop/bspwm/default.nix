@@ -2,11 +2,6 @@
 imports = [ 
    ./sxhkd
 ];
-home.packages = with pkgs; [
-
-alacritty
-
-];
 
  xsession = {
  enable = true;
@@ -18,8 +13,8 @@ alacritty
       # "xwinwrap -g 1920x1080 -fs -d -fdt -sp -st -nf -ov -- mpv -wid WID --loop ~/Wallpapers/Animated/Railway.gif"
       "polybar"
       "picom --config ~/.config/picom/picom.conf -b --animations --animation-window-mass 0.5 --animation-for-open-window zoom --animation-stiffness 350"
-      "bash ~/.config/scripts/redshift.sh"
       "flameshot"
+      "redshift"
       "nitrogen --restore"
     ];
 

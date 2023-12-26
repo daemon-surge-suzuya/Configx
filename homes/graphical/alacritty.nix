@@ -1,43 +1,47 @@
 _: {
   programs.alacritty = {
   enable = true;
+  
   settings = {
+  
   window = {
   opacity = 0.8;
   };
+  
   shell = {
   program = "fish";
   };
   
-  colors = {
-  
+  cursor = {
+    style = "Beam";
+  };
+
+colors = {
   primary = {
-  background = "0x0e0913";
-  foreground = "0xa7c3d5";
-  };
-  
+    background = "#1c1f2a";
+    foreground = "#a5a6b5";
+    };
   normal = {
-  black = "0x2A368C";
-  red = "0x252E93";
-  green = "0x344F98";
-  yellow = "0x5743A2";
-  blue = "0x565CA3";
-  magenta = "0xA95E9D";
-  cyan = "0xa7c3d5";
-  white = "0x748895";
-  };
-  
+    black = "#1c1f2a";
+    red = "#939CBA";
+    green = "#92A2BD";
+    yellow = "#9EB1CF";
+    blue = "#BABBF1";
+    magenta = "#BABBF0";
+    cyan = "#BABBF1";
+    white = "#d3d5ef";
+    };
   bright = {
-  black = "0x2A368C";
-  red = "0x252E93";
-  green = "0x344F98";
-  yellow = "0x5743A2";
-  blue = "0x565CA3";
-  magenta = "0xA95E9D";
-  cyan = "0xa7c3d5";
-  white = "0x748895";
-  };
-  };
-};
-};
+    black = "#9395a7";
+    red = "#939CBA";
+    green = "#92A2BD";
+    yellow = "#9EB1CF";
+    blue = "#BABBF1";
+    magenta = "#BABBF0";
+    cyan = "#BABBF1";
+    white = "#d3d5ef";
+    };
+ };
+ };
+ };
 }

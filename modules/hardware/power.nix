@@ -3,12 +3,13 @@
 {
 
   powerManagement.enable = true;
+  powerManagement.cpuFreqGovernor = "performance";
   services.thermald.enable = true;
   services.auto-cpufreq.enable = true;
-  services.tlp.enable = true;
+  # services.tlp.enable = true;
   services.auto-cpufreq.settings = {
     battery = {
-      governor = "powersave";
+      governor = "performance";
       turbo = "always";
     };
     charger = {

@@ -10,7 +10,7 @@ _: {
   "super + d" = "discord";
   "super + x" = "i3lock-fancy";
   "super + shift + u" = "flameshot gui";
-  "super + Return" = "alacritty";
+  "super + Return" = "kitty";
   "super + Escape" = "pkill -USR1 -x sxhkd";
 
   "alt + o" = "obs";
@@ -20,8 +20,8 @@ _: {
   "alt + a" = "alacritty -e nvim";
   "alt + shift + p" = "pavucontrol";
 
-  "super + ctrl + i" = "brightnessctl set 1%+";
-  "super + ctrl + o" = "brightnessctl set 1%-";
+  "super + alt + i" = "brightnessctl set 1%+";
+  "super + alt + o" = "brightnessctl set 1%-";
   
   "super + shift + ctrl + alt + s" = "shutdown now";
   "super + shift + ctrl + alt + r" = "reboot";

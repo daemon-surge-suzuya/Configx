@@ -18,7 +18,6 @@ in
       '';
 
       shellAliases = {
-        "nvim" = "neovide";
         "nb" = "nix-build -E \'with import <nixpkgs> { }; callPackage ./default.nix { }\'";
         "mkdir" = "mkdir -p";
         "lg" = "nix profile history --profile /nix/var/nix/profiles/system --extra-experimental-features nix-command";

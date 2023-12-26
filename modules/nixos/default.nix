@@ -7,16 +7,16 @@
 {
   
   # For some reason even after enabling bspwm and xserver through home-manager, I couldn't start a session after the reboot so had to add these two lines 
-  # services.xserver.windowManager.bspwm.enable = true;
+  services.xserver.windowManager.bspwm.enable = true;
   services.xserver.displayManager.sddm.enable = true;
-  services.xserver.windowManager.dwm.enable = true;
-  programs.hyprland.enable = true;
+  # services.xserver.windowManager.dwm.enable = true;
+  # programs.hyprland.enable = true;
 
   nixpkgs.overlays = [
       (final: prev: {
-      dwm = prev.dwm.overrideAttrs (old: { src = /home/moon/1TB/GitHub/Suckless/dwm ;});
-      dmenu = prev.dmenu.overrideAttrs (old: { src = /home/moon/1TB/GitHub/Suckless/dmenu ;});
-      dwmblocks = prev.dwmblocks.overrideAttrs (old: { src = /home/moon/1TB/GitHub/Suckless/dwmblocks ;});
+      # dwm = prev.dwm.overrideAttrs (old: { src = /home/moon/1TB/GitHub/Suckless/dwm ;});
+      # dmenu = prev.dmenu.overrideAttrs (old: { src = /home/moon/1TB/GitHub/Suckless/dmenu ;});
+      # dwmblocks = prev.dwmblocks.overrideAttrs (old: { src = /home/moon/1TB/GitHub/Suckless/dwmblocks ;});
       })
   ];
 
@@ -127,6 +127,7 @@
   services.flatpak.enable = true;
   services.printing.enable = true;
   security.rtkit.enable = true;
+  programs.dconf.enable = true;
 
   # steam
 
