@@ -55,6 +55,7 @@
      (pkgs.callPackage /home/moon/.config/Bin/NixOs/c.nix {})
      (pkgs.callPackage /home/moon/.config/Bin/NixOs/ch-mac.nix {})
      (pkgs.callPackage /home/moon/.config/Bin/NixOs/waller.nix {})
+     (pkgs.callPackage /home/moon/.config/Bin/NixOs/a.nix {})
 
       curl
       dmenu

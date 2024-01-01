@@ -146,7 +146,7 @@
       "module/menu" = {
         type = "custom/text";
         content = " ";
-        content-foreground = "${colors.mocha-pink}";
+        content-foreground = "${colors.mocha-lavender}";
         content-padding = 2;
         click-left = "brave 'https://search.nixos.org/packages'";
       };

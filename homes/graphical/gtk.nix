@@ -10,12 +10,12 @@ home.packages = with pkgs; [
   gtk = {
     enable = true;
     theme = {
-      name = "Catppuccin-Mocha-Compact-Flamingo-Dark";
+      name = "Catppuccin-Frappe-Compact-Lavender-Dark";
       package = pkgs.catppuccin-gtk.override {
-        accents = [ "flamingo" ];
+        accents = [ "lavender" ];
         size = "compact";
         tweaks = [ "normal" "rimless" ];
-        variant = "mocha";
+        variant = "frappe";
       };
     };
   };

@@ -10,5 +10,6 @@ _: {
   ./feh.sh
   ./kitty.nix
   ./lf
+  ./firefox
   ];
 }

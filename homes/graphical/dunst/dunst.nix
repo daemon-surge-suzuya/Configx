@@ -56,12 +56,12 @@ _: {
   };
   urgency_low = {
     background = "#181825AA";
-    foreground = "#f4b8e4";
+    foreground = "#b7bdf8";
     timeout = 10;  
   };
   urgency_normal = {
     background = "#181825AA";
-    foreground = "#f4b8e4";
+    foreground = "#b7bdf8";
     timeout = 10;
   };
   urgency_critical = {
