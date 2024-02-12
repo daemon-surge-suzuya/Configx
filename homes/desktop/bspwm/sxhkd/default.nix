@@ -6,6 +6,7 @@ _: {
   keybindings = {
 
   "super + b" = "brave";
+  "super + f" = "firefox";
   "super + s" = "spotify";
   "super + d" = "discord";
   "super + x" = "i3lock-fancy";

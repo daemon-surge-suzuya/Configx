@@ -7,7 +7,7 @@ _: {
   ./tmux.nix
   ./mpv.nix
   ./gtk.nix
-  ./feh.sh
+  ./feh.nix
   ./kitty.nix
   ./lf
   ./firefox

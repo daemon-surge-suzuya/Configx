@@ -5,7 +5,7 @@ _: {
   settings = {
   
   window = {
-  opacity = 0.8;
+  opacity = 1.0;
   };
   
   shell = {
@@ -41,7 +41,7 @@ colors = {
     cyan = "#BABBF1";
     white = "#d3d5ef";
     };
+  };
  };
- };
- };
+};
 }

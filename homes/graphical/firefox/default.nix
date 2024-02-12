@@ -21,6 +21,7 @@
       ublock-origin
       privacy-badger
       decentraleyes
+      duckduckgo-privacy-essentials
       disconnect
       tabliss
 
