@@ -2,7 +2,6 @@ _: {
   programs.kitty = {
     enable = true;
     extraConfig = ''
-      # Colors
       background #1c1f2a
       foreground #a5a6b5
 

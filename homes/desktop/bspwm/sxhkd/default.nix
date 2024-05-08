@@ -7,13 +7,17 @@ _: {
 
   "super + b" = "brave";
   "super + f" = "firefox";
+  "super + i" = "librewolf";
   "super + s" = "spotify";
   "super + d" = "discord";
   "super + x" = "i3lock-fancy";
-  "super + shift + u" = "flameshot gui";
+  "super + shift + u"= "flameshot gui";
   "super + Return" = "kitty";
+  "super + c" = "gnome-calculator";
   "super + Escape" = "pkill -USR1 -x sxhkd";
+  "super + e" = "element-desktop";
 
+  "alt + g" = "guvcview";
   "alt + o" = "obs";
   "alt + t" = "thunar";
   "alt + c" = "code";
@@ -23,7 +27,8 @@ _: {
 
   "super + alt + i" = "brightnessctl set 1%+";
   "super + alt + o" = "brightnessctl set 1%-";
-  
+  "super + alt + shift + x" = "bash ~/.scripts/cam.sh rmmod -f uvcvideo && dunstify 'Unloading uvcvideo module' 'Disabling Camera'";
+  "super + alt + shift + z" = "bash ~/.scripts/cam.sh modprobe uvcvideo && dunstify 'Loading uvcvideo module' 'Enabling Camera'";
   "super + shift + ctrl + alt + s" = "shutdown now";
   "super + shift + ctrl + alt + r" = "reboot";
 

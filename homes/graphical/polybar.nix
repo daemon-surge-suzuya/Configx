@@ -137,7 +137,7 @@
         font-1 = "Hack:size=12";
         modules-left = "menu bspwm";
         modules-center = "xwindow";
-        modules-right = "xkeyboard memory cpu volume pulseaudio date";
+        modules-right = "xkeyboard memory cpu wireless-network pipewire date";
         cursor-click = "pointer";
         cursor-scroll = "ns-resize";
         enable-ipc = true;
@@ -145,9 +145,11 @@
 
       "module/menu" = {
         type = "custom/text";
-        content = " ";
+        content = "  ";
+        font-0 = "SymbolsNerdFontMono-Regular:pixelsize=25";
+        font-1 = "Hack:size=20";
         content-foreground = "${colors.mocha-lavender}";
-        content-padding = 2;
+        content-padding = 0;
         click-left = "brave 'https://search.nixos.org/packages'";
       };
 
@@ -185,8 +187,8 @@
         label = "%title:0:60:...%";
       };
 
-      "module/pulseaudio" = {
-        type = "internal/pulseaudio";
+      "module/pipewire" = {
+        type = "internal/pipewire";
         label-volume-foreground = "${colors.mocha-green}";
         format-volume = "<label-volume>";
         label-volume = "%{T3}%{T-} %percentage%%";
@@ -218,12 +220,22 @@
         label = "%{T3}%{T-}  %percentage%%";
       };
 
-      "network-base" = {
+      "module/wireless-network" = {
         type = "internal/network";
-        interval = 5;
+        interface = "wlp3s0";
+        interval = "1.0";
+
         format-connected = "<label-connected>";
+        label-connected = "%ifname%";
+        label-connected-background = "${colors.mocha-crust}";
+        label-connected-foreground = "${colors.mocha-green}";
+        label-connected-padding = 1;
+
         format-disconnected = "<label-disconnected>";
-        label-disconnected = "%{F#F0C674}%ifname%%{F#707880} disconnected}";
+        label-disconnected = "Offline";
+        label-disconnected-background = "${colors.mocha-crust}";
+        label-disconnected-foreground = "${colors.mocha-red}";
+        label-disconnected-padding = 1;
       };
 
       "module/date" = {

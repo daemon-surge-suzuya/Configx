@@ -9,14 +9,15 @@
   # For some reason even after enabling bspwm and xserver through home-manager, I couldn't start a session after the reboot so had to add these two lines 
   services.xserver.windowManager.bspwm.enable = true;
   services.xserver.displayManager.sddm.enable = true;
-  # services.xserver.windowManager.dwm.enable = true;
+  # services.xserver.windowManager.dwm.enable = false;
   # programs.hyprland.enable = true;
 
   nixpkgs.overlays = [
       (final: prev: {
-      # dwm = prev.dwm.overrideAttrs (old: { src = /home/moon/1TB/GitHub/Suckless/dwm ;});
+      # dwm = prev.dwm.overrideAttrs (old: { src = /home/moon/1TB/GitHub/dwm ;});
       # dmenu = prev.dmenu.overrideAttrs (old: { src = /home/moon/1TB/GitHub/Suckless/dmenu ;});
       # dwmblocks = prev.dwmblocks.overrideAttrs (old: { src = /home/moon/1TB/GitHub/Suckless/dwmblocks ;});
+      # st = prev.st.overrideAttrs (old: { src = /home/moon/1TB/GitHub/Suckless/st ;});
       })
   ];
 
@@ -65,6 +66,7 @@
       nitrogen
       i3lock-fancy
       sxhkd
+      guvcview
       brightnessctl
       flameshot
       file
@@ -77,10 +79,11 @@
       redshift
       cmus
       ueberzug
-      brave
-      iw
       discord
-      protonvpn-cli
+      brave
+      gnome.gnome-calculator
+      element-desktop
+      btop
     ];
 
     sessionVariables = {

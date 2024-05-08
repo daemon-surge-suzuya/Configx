@@ -7,7 +7,7 @@
   
   home.username = "moon";
   home.homeDirectory = "/home/moon";
-  home.stateVersion = "23.05";
+  home.stateVersion = "23.11";
   home.sessionVariables = {
     EDITOR = "neovide";
   };
