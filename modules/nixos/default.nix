@@ -6,11 +6,22 @@
 
 {
   
-  # For some reason even after enabling bspwm and xserver through home-manager, I couldn't start a session after the reboot so had to add these two lines 
-  services.xserver.windowManager.bspwm.enable = true;
-  services.xserver.displayManager.sddm.enable = true;
-  # services.xserver.windowManager.dwm.enable = false;
-  # programs.hyprland.enable = true;
+  # For some reason even after enabling bspwm and xserver through home-manager, I couldn't start a session after the reboot so had to add the following
+
+  services.xserver = {
+    
+    windowManager = {
+        
+        bspwm.enable = true;
+        dwm.enable = false;
+        i3.enable = false;
+    };
+
+    displayManager.sddm.enable = true;
+
+  };
+  
+  programs.hyprland.enable = false;
 
   nixpkgs.overlays = [
       (final: prev: {
@@ -73,7 +84,7 @@
       obs-studio
       librewolf
       spotify
-      ffmpeg
+      ffmpeg-full
       sxiv
       xwinwrap
       redshift
@@ -84,6 +95,8 @@
       gnome.gnome-calculator
       element-desktop
       btop
+      libnotify
+      xorg.xdpyinfo
     ];
 
     sessionVariables = {

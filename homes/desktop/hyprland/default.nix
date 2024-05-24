@@ -24,7 +24,7 @@ imports = [
 
   wayland.windowManager.hyprland = {
 
-    enable = false; 
+    enable = true; 
     # enableNvidiaPatches = true;
     xwayland.enable = true;
   

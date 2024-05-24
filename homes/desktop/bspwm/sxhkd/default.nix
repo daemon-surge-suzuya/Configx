@@ -24,7 +24,10 @@ _: {
   "alt + n" = "obsidian";
   "alt + a" = "alacritty -e nvim";
   "alt + shift + p" = "pavucontrol";
-
+  "super + ctrl + shift + r" = "bash ~/1TB/GitHub/Bin/recorder.sh -s"; 
+  "super + ctrl + shift + a" = "bash ~/1TB/GitHub/Bin/recorder.sh -b";
+  "super + ctrl + shift + s" = "bash ~/1TB/GitHub/Bin/recorder.sh -a";
+  "super + ctrl + shift + k" = "pkill ffmpeg && notify-send 'Recording has stopped' 'Killed FFMPEG'";
   "super + alt + i" = "brightnessctl set 1%+";
   "super + alt + o" = "brightnessctl set 1%-";
   "super + alt + shift + x" = "bash ~/.scripts/cam.sh rmmod -f uvcvideo && dunstify 'Unloading uvcvideo module' 'Disabling Camera'";

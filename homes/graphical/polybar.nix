@@ -145,7 +145,7 @@
 
       "module/menu" = {
         type = "custom/text";
-        content = "  ";
+        content = "";
         font-0 = "SymbolsNerdFontMono-Regular:pixelsize=25";
         font-1 = "Hack:size=20";
         content-foreground = "${colors.mocha-lavender}";
@@ -155,27 +155,26 @@
 
       "module/bspwm" = {
         type = "internal/bspwm";
-        format = "<label-state> <label-mode>";
-        label = "%index%";
+        format = "<label-state>";
         label-padding = 1;
         label-margin = 1;
         label-font = 1;
-        label-focused = "%index%";
+        label-focused = "●";
         label-focused-padding = 1;
         label-focused-margin = 1;
         label-focused-font = 1;
         label-focused-foreground = "${colors.mocha-text}";
         label-focused-background = "${colors.mocha-surface1}";
         label-focused-underline = "${colors.mocha-mauve}";
-        label-occupied = "%index%";
+        label-occupied = "●";
         label-occupied-margin = 1;
         label-occupied-padding = 1;
         label-occupied-background = "${colors.mocha-base}";
         label-occupied-foreground = "${colors.mocha-text}";
         label-occupied-font = 1;
-        label-urgent = "%index%";
+        label-urgent = "◍";
         label-urgent-background = "${colors.mocha-red}";
-        label-empty = "%index%";
+        label-empty = "○";
         label-empty-padding = 1;
         label-empty-margin = 1;
         label-empty-font = 1;
