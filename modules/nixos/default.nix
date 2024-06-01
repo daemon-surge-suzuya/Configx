@@ -49,6 +49,7 @@
         rev = "982bb43e5d4116f1a37a0bde01c9bda0b88705b9";
         sha256 = "YiuLScDV9UfgI1MiYRtjgRkJ0VuA1TExATA2nJSJMhM=";
       };
+      buildInputs = o.buildInputs ++ [pkgs.pcre];
     }))
 
      # (dwm.overrideAttrs (oldAttrs: rec {
@@ -83,15 +84,16 @@
       file
       obs-studio
       librewolf
-      spotify
+      # spotify
+      ani-cli
       ffmpeg-full
       sxiv
       xwinwrap
       redshift
       cmus
       ueberzug
-      discord
       brave
+      discord
       gnome.gnome-calculator
       element-desktop
       btop

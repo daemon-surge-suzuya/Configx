@@ -137,7 +137,7 @@
         font-1 = "Hack:size=12";
         modules-left = "menu bspwm";
         modules-center = "xwindow";
-        modules-right = "xkeyboard memory cpu wireless-network pipewire date";
+        modules-right = "battery memory cpu wireless-network pipewire date";
         cursor-click = "pointer";
         cursor-scroll = "ns-resize";
         enable-ipc = true;
@@ -211,12 +211,26 @@
         label = "%percentage_used%%";
       };
 
+      "module/battery" = {
+        type = "internal/battery";
+        poll-interval = 5;
+        full-at = 99;
+        battery = "BAT0";
+        adapter = "AC";
+        label-full = "%percentage%% ";
+        label-full-foreground = "${colors.frappe-mauve}";
+        label-charging = "%percentage%% ";
+        label-charging-foreground = "${colors.frappe-mauve}";
+        label-discharging = "%percentage%% ";
+        label-discharging-foreground = "${colors.mocha-pink}";
+      };
+
       "module/cpu" = {
         type = "internal/cpu";
         interval = 2;
         format-prefix-foreground = "${colors.mocha-text}";
         label-foreground = "${colors.mocha-red}";
-        label = "%{T3}%{T-}  %percentage%%";
+        label = "%{T3}%{T-} %percentage%%";
       };
 
       "module/wireless-network" = {
