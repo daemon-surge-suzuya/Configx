@@ -2,8 +2,6 @@
 
 {
   
-  boot.kernelParams = [ "nouveau" ];
-
   hardware = {
     
       opengl = {
