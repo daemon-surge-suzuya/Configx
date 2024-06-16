@@ -93,11 +93,11 @@
       cmus
       ueberzug
       brave
-      discord
       gnome.gnome-calculator
       element-desktop
       btop
       libnotify
+      discord
       xorg.xdpyinfo
     ];
 

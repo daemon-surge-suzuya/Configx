@@ -221,14 +221,9 @@ with pkgs; {
   map R reload
   map C clear
 
-  map gD cd ~/documents
-  map gd cd ~/downloads
-  map gp cd ~/pictures
-  map gc cd ~/.config
-  map gr cd ~/repos
-  map gv cd ~/videos
-  map gs cd ~/.local/bin
-  map gt cd ~/.local/share/Trash/files
+  map gD cd ~/Documents
+  map gd cd ~/Downloads
+  map gp cd ~/Pictures
 
 '';
 
