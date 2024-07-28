@@ -1,43 +1,44 @@
 _: {
   services = {
-  sxhkd = {
-  enable = true;
-  
-  keybindings = {
+    sxhkd = {
+      enable = true;
 
-  "super + b" = "brave";
-  "super + f" = "firefox";
-  "super + i" = "librewolf";
-  "super + s" = "spotify";
-  "super + d" = "discord";
-  "super + x" = "i3lock-fancy";
-  "super + shift + u"= "flameshot gui";
-  "super + Return" = "kitty";
-  "super + c" = "gnome-calculator";
-  "super + Escape" = "pkill -USR1 -x sxhkd";
-  "super + e" = "element-desktop";
+      keybindings = {
 
-  "alt + g" = "guvcview";
-  "alt + o" = "obs";
-  "alt + t" = "thunar";
-  "alt + c" = "code";
-  "alt + n" = "obsidian";
-  "alt + a" = "alacritty -e nvim";
-  "alt + shift + p" = "pavucontrol";
-  "super + ctrl + shift + r" = "bash ~/1TB/GitHub/Bin/recorder.sh -s"; 
-  "super + ctrl + shift + a" = "bash ~/1TB/GitHub/Bin/recorder.sh -b";
-  "super + ctrl + shift + s" = "bash ~/1TB/GitHub/Bin/recorder.sh -a";
-  "super + ctrl + shift + k" = "pkill ffmpeg && notify-send 'Recording has stopped' 'Killed FFMPEG'";
-  "super + alt + i" = "brightnessctl set 1%+";
-  "super + alt + o" = "brightnessctl set 1%-";
-  "super + alt + shift + x" = "bash ~/.scripts/cam.sh rmmod -f uvcvideo && dunstify 'Unloading uvcvideo module' 'Disabling Camera'";
-  "super + alt + shift + z" = "bash ~/.scripts/cam.sh modprobe uvcvideo && dunstify 'Loading uvcvideo module' 'Enabling Camera'";
-  "super + shift + ctrl + alt + s" = "shutdown now";
-  "super + shift + ctrl + alt + r" = "reboot";
+        "super + b" = "brave";
+        "super + f" = "firefox";
+        "super + i" = "librewolf";
+        "super + s" = "spotify";
+        "super + d" = "discord";
+        "super + x" = "i3lock-fancy";
+        "super + shift + u" = "flameshot gui";
+        "super + Return" = "kitty";
+        "super + c" = "gnome-calculator";
+        "super + Escape" = "pkill -USR1 -x sxhkd";
+        "super + e" = "element-desktop";
 
-  };
+        "alt + g" = "guvcview";
+        "alt + o" = "obs";
+        "alt + t" = "thunar";
+        "alt + c" = "code";
+        "alt + n" = "obsidian";
+        "alt + a" = "alacritty -e nvim";
+        "alt + l" = "kitty -e lf";
+        "alt + shift + p" = "pavucontrol";
+        "super + ctrl + shift + r" = "bash ~/1TB/GitHub/Bin/recorder.sh -s";
+        "super + ctrl + shift + a" = "bash ~/1TB/GitHub/Bin/recorder.sh -b";
+        "super + ctrl + shift + s" = "bash ~/1TB/GitHub/Bin/recorder.sh -a";
+        "super + ctrl + shift + k" = "pkill ffmpeg && notify-send 'Recording has stopped' 'Killed FFMPEG'";
+        "super + alt + i" = "brightnessctl set 1%+";
+        "super + alt + o" = "brightnessctl set 1%-";
+        "super + alt + shift + x" = "bash ~/.scripts/cam.sh rmmod -f uvcvideo && dunstify 'Unloading uvcvideo module' 'Disabling Camera'";
+        "super + alt + shift + z" = "bash ~/.scripts/cam.sh modprobe uvcvideo && dunstify 'Loading uvcvideo module' 'Enabling Camera'";
+        "super + shift + ctrl + alt + s" = "shutdown now";
+        "super + shift + ctrl + alt + r" = "reboot";
 
-  extraConfig = '' 
+      };
+
+      extraConfig = '' 
   #
   # bspwm hotkeys
   #
@@ -155,6 +156,7 @@ _: {
   super + {Left,Down,Up,Right}
     bspc node -v {-20 0,0 20,0 -20,20 0}
 
-  '';};
+  '';
+    };
   };
 }

@@ -1,38 +1,30 @@
-{ pkgs, lib, ... }: 
+{ pkgs, lib, ... }:
 
 let
-_ = lib.getExe;
+  _ = lib.getExe;
 in
 
-with pkgs; { 
+with pkgs; {
 
   programs.helix = {
 
     enable = true;
     defaultEditor = false;
 
-    extraPackages = [
-    
-    rustup
-    rust-analyzer
-    clippy
-    
-    ];
-
     settings = {
-    
-      theme = "base16_transparent";
-    
-      };
+
+      theme = "catppuccin_mocha";
+
+    };
 
     languages = {
 
       language-server.rust-analyzer = {
 
         command = "${_ rust-analyzer}";
-        
+
         config.check = {
-        "command" = "${_ clippy}";
+          "command" = "${_ clippy}";
         };
 
       };

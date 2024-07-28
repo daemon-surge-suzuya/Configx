@@ -2,10 +2,11 @@
 
 {
 
-  services.xserver.enable = true;
-  services.xserver.videoDrivers = [ "nvidia" ];
-  services.xserver.libinput.enable = true;
-  services.xserver.layout = "us";
-  services.xserver.xkbVariant = "";
-  
+  services = {
+    xserver.enable = true;
+    xserver.videoDrivers = [ "nvidia" ];
+    libinput.enable = true;
+    xserver.xkb.layout = "us";
+    xserver.xkb.variant = "";
+  };
 }

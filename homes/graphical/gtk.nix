@@ -3,10 +3,6 @@
   ...
 }: {
 
-home.packages = with pkgs; [
-  dconf
-];
-
   gtk = {
     enable = true;
     cursorTheme = {
@@ -15,11 +11,10 @@ home.packages = with pkgs; [
       size = 20;
     };
     theme = {
-      name = "Catppuccin-Frappe-Compact-Lavender-Dark";
+      name = "catppuccin-frappe-lavender-compact";
       package = pkgs.catppuccin-gtk.override {
         accents = [ "lavender" ];
         size = "compact";
-        tweaks = [ "normal" "rimless" ];
         variant = "frappe";
       };
     };
