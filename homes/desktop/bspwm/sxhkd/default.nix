@@ -9,7 +9,7 @@ _: {
         "super + f" = "firefox";
         "super + i" = "librewolf";
         "super + s" = "spotify";
-        "super + d" = "discord";
+        "super + d" = "vesktop";
         "super + x" = "i3lock-fancy";
         "super + shift + u" = "flameshot gui";
         "super + Return" = "kitty";
@@ -17,6 +17,7 @@ _: {
         "super + Escape" = "pkill -USR1 -x sxhkd";
         "super + e" = "element-desktop";
 
+        "alt + p" = "pdfmm";
         "alt + g" = "guvcview";
         "alt + o" = "obs";
         "alt + t" = "thunar";

@@ -99,6 +99,8 @@
       discord
       xorg.xdpyinfo
       xclip
+      vesktop
+      pdfmm
     ];
 
     sessionVariables = {

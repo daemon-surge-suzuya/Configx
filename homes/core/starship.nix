@@ -1,4 +1,4 @@
-{lib, ...}: {
+{ lib, ... }: {
   programs.starship = {
     enable = true;
     enableIonIntegration = false;
@@ -7,7 +7,7 @@
 
     # Pure Presets
     settings = {
-        palettes.catppuccin_macchiato = {
+      palettes.catppuccin_macchiato = {
         rosewater = "#f4dbd6";
         flamingo = "#f0c6c6";
         pink = "#f5bde6";
@@ -34,7 +34,7 @@
         base = "#24273a";
         mantle = "#1e2030";
         crust = "#181926";
-        };
+      };
       palette = "catppuccin_macchiato";
       add_newline = false;
       right_format = lib.concatStrings [
@@ -46,14 +46,15 @@
       continuation_prompt = "▶ ";
       command_timeout = 1000;
       character = {
-      success_symbol = "[[ ](pink) ❯](teal)";
-      error_symbol = "[❯](red)";
-      vimcmd_symbol = "[❮](green)";
+        # success_symbol = "[[ ](pink) ❯](teal)";
+        success_symbol = "[❯](teal)";
+        error_symbol = "[❯](red)";
+        vimcmd_symbol = "[❮](green)";
       };
       git_branch = {
-      symbol = " ";
-      format = "via [$symbol$branch]($style) ";
-      style = "bold mauve";
+        symbol = " ";
+        format = "via [$symbol$branch]($style) ";
+        style = "bold mauve";
       };
       git_state = {
         format = "\([$state( $progress_current/$progress_total)]($style)\)";
@@ -68,9 +69,9 @@
         disabled = false;
       };
       cmd_duration = {
-      format = "[$duration](fg:peach)";
-      style = "yellow";
-      min_time = 1000;
+        format = "[$duration](fg:peach)";
+        style = "yellow";
+        min_time = 1000;
       };
     };
   };
