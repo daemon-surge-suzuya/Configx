@@ -101,6 +101,8 @@
       xclip
       vesktop
       pdfmm
+      tor-browser
+      thunderbird
     ];
 
     sessionVariables = {

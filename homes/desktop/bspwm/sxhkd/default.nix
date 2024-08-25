@@ -16,7 +16,9 @@ _: {
         "super + c" = "gnome-calculator";
         "super + Escape" = "pkill -USR1 -x sxhkd";
         "super + e" = "element-desktop";
-
+        
+        "alt + shift + e" = "thunderbird";
+        "alt + shift + t" = "tor-browser";
         "alt + p" = "pdfmm";
         "alt + g" = "guvcview";
         "alt + o" = "obs";
