@@ -1,11 +1,16 @@
 { pkgs
 , inputs
+, lib
 , ...
 }:
-
+let
+  spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
+in
 {
 
-  # For some reason even after enabling bspwm and xserver through home-manager, I couldn't start a session after the reboot so had to add the following
+  imports = [
+    inputs.spicetify-nix.nixosModules.default
+  ];
 
   services.xserver = {
 
@@ -19,8 +24,9 @@
   };
 
   services.displayManager.sddm.enable = true;
-
   programs.hyprland.enable = false;
+
+  # Nix Configuration
 
   nixpkgs.overlays = [
     (final: prev: {
@@ -31,12 +37,44 @@
     })
   ];
 
+  nix = {
+    settings = {
+      sandbox = true;
+
+      experimental-features = [
+        "auto-allocate-uids"
+        "ca-derivations"
+        "flakes"
+        "no-url-literals"
+        "nix-command"
+      ];
+      auto-optimise-store = true;
+    };
+
+    optimise.automatic = true;
+  };
+
   nixpkgs.config = {
     allowUnfree = true;
     permittedInsecurePackages = [
       "electron-25.9.0"
     ];
   };
+
+  nixpkgs.config.packageOverrides = pkgs: {
+    nur = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/master.tar.gz") {
+      inherit pkgs;
+    };
+  };
+
+  # Unfree
+
+  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+    "steam"
+    "steam-original"
+    "steam-run"
+    "spotify"
+  ];
 
   environment = {
     systemPackages = with pkgs; [
@@ -69,8 +107,9 @@
       (pkgs.callPackage /home/moon/.config/Bin/NixOs/waller.nix { })
       (pkgs.callPackage /home/moon/.config/Bin/NixOs/a.nix { })
 
+      nh
+      yazi
       curl
-      dmenu
       pavucontrol
       picom
       obsidian
@@ -104,18 +143,9 @@
       tor-browser
       thunderbird
     ];
-
-    sessionVariables = {
-      DIRENV_WARN_TIMEOUT = "24h";
-      DIRENV_LOG_FORMAT = "";
-    };
   };
 
-  security.pam.services.waylock = {
-    text = ''
-      auth include login
-    '';
-  };
+
 
   fonts = {
     packages = with pkgs; [
@@ -125,32 +155,12 @@
       source-han-sans
       (nerdfonts.override { fonts = [ "Meslo" ]; })
     ];
-  };
-
-  nix = {
-    settings = {
-      sandbox = true;
-
-      experimental-features = [
-        "auto-allocate-uids"
-        "ca-derivations"
-        "flakes"
-        "no-url-literals"
-        "nix-command"
-      ];
-      auto-optimise-store = true;
+    fontconfig = {
+      defaultFonts = {
+        emoji = [ "Apple Color Emoji" ];
+      };
     };
-
-    optimise.automatic = true;
   };
-
-  # Etc
-  programs.adb.enable = true;
-  programs.fish.enable = true;
-  services.flatpak.enable = true;
-  services.printing.enable = true;
-  security.rtkit.enable = true;
-  programs.dconf.enable = true;
 
   # steam
 
@@ -159,5 +169,115 @@
     remotePlay.openFirewall = true;
     dedicatedServer.openFirewall = true;
   };
+
+  # spicetify 
+
+  programs.spicetify = {
+    enable = true;
+    enabledExtensions = with spicePkgs.extensions ; [
+      adblock
+      hidePodcasts
+      shuffle
+    ];
+    theme = spicePkgs.themes.catppuccin;
+    colorScheme = "mocha";
+  };
+
+  # Etc
+
+  programs.adb.enable = true;
+  programs.fish.enable = true;
+  services.flatpak.enable = true;
+  services.printing.enable = true;
+  security.rtkit.enable = true;
+  programs.dconf.enable = true;
+  hardware.pulseaudio.enable = false;
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = true;
+  services.blueman.enable = true;
+  sound.enable = true;
+  services.automatic-timezoned.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    # If you want to use JACK applications, uncomment this
+    # jack.enable = true;
+    # use the example session manager (no others are packaged yet, so this is enabled by default,
+    # no need to redefine it in your config for now)
+    # media-session.enable = true;
+  };
+
+
+  # Drives Configuration
+
+  fileSystems."/home/moon/1TB" = {
+    device = "/dev/disk/by-uuid/7dc58477-2386-4853-8588-fdc1cfde9f24";
+    fsType = "ext4";
+  };
+
+  # Time Zone and Internationalization Settings
+
+  time.timeZone = "Africa/Kampala";
+  i18n.defaultLocale = "en_US.UTF-8";
+  i18n.extraLocaleSettings = {
+    LC_ADDRESS = "lg_UG.UTF-8";
+    LC_IDENTIFICATION = "en_US.UTF-8";
+    LC_MEASUREMENT = "en_US.UTF-8";
+    LC_MONETARY = "en_US.UTF-8";
+    LC_NAME = "en_US.UTF-8";
+    LC_NUMERIC = "en_US.UTF-8";
+    LC_PAPER = "en_US.UTF-8";
+    LC_TELEPHONE = "en_US.UTF-8";
+    LC_TIME = "en_US.UTF-8";
+  };
+
+  # User Account
+
+  users.users.moon = {
+    isNormalUser = true;
+    description = "moon";
+    extraGroups = [ "networkmanager" "wheel" "wireshark" "adbusers" "tty" ];
+    packages = with pkgs; [
+      # Uncomment packages you want to install for the user.
+      # firefox
+    ];
+  };
+
+  # Environment Configuration
+
+  environment.variables.DIRENV_LOG_FORMAT = "";
+
+  environment.sessionVariables = {
+    DIRENV_WARN_TIMEOUT = "24h";
+    DIRENV_LOG_FORMAT = "";
+  };
+
+  security.pam.services.waylock = {
+    text = ''
+      auth include login
+    '';
+  };
+
+  xdg.portal = {
+    enable = true;
+    config.common.default = "*";
+    extraPortals = with pkgs; [ xdg-desktop-portal-gtk ];
+  };
+
+  # Network Configuration
+
+  networking.networkmanager.enable = true;
+  # Configure network proxy if necessary.
+  # networking.proxy.default = "http://user:password@proxy:port/";
+  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+  networking.firewall.enable = true;
+  # networking.firewall.allowedTCPPorts = [ ... ];
+  # networking.firewall.allowedUDPPorts = [ ... ];
+
+  # State Version
+
+  system.stateVersion = "24.05";
 
 }

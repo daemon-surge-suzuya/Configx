@@ -260,6 +260,15 @@
         label-foreground = "${colors.mocha-sky}";
       };
 
+      "module/temperature" = {
+        type = "internal/temperature";
+        interval = 1;
+        zone-type = "x86_pkg_temp";
+        hwmon-path = "/sys/devices/platform/coretemp.0/hwmon/hwmon4/temp1_input";
+        base-temperature = 20;
+        warn-temperature = 70;
+      };
+
       "settings" = {
         screenchange-reload = true;
         pseudo-transparency = true;
