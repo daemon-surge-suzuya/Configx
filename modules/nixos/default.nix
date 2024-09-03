@@ -233,18 +233,6 @@ in
     LC_TIME = "en_US.UTF-8";
   };
 
-  # User Account
-
-  users.users.moon = {
-    isNormalUser = true;
-    description = "moon";
-    extraGroups = [ "networkmanager" "wheel" "wireshark" "adbusers" "tty" ];
-    packages = with pkgs; [
-      # Uncomment packages you want to install for the user.
-      # firefox
-    ];
-  };
-
   # Environment Configuration
 
   environment.variables.DIRENV_LOG_FORMAT = "";

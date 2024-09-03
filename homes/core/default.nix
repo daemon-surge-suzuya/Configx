@@ -6,5 +6,6 @@ _: {
     ./starship.nix
     ./coding.nix
     ./search.nix
+    # ./nushell.nix
   ];
 }

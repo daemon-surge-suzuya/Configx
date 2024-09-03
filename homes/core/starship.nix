@@ -3,6 +3,7 @@
     enable = true;
     enableIonIntegration = false;
     enableFishIntegration = true;
+    enableNushellIntegration = true;
     enableZshIntegration = true;
 
     # Pure Presets
