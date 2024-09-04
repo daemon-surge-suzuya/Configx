@@ -1,6 +1,6 @@
-{ pkgs
-, inputs
+{ inputs
 , lib
+, pkgs
 , ...
 }:
 let
@@ -10,6 +10,7 @@ in
 
   imports = [
     inputs.spicetify-nix.nixosModules.default
+    ./hardware-configuration.nix
   ];
 
   services.xserver = {
