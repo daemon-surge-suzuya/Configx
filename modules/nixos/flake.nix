@@ -33,6 +33,7 @@
       system = "x86_64-linux";
       specialArgs = { inherit inputs; };
       modules = [
+
         (import ./default.nix inputs)
 
         home-manager.nixosModules.home-manager
@@ -40,7 +41,7 @@
 
           home-manager.useGlobalPkgs = true;
 
-          home-manager.users.moon = import /home/moon/.config/home-manager/home.nix;
+          home-manager.users.moon = import ~/.config/home-manager/home.nix;
         }
       ];
     };
