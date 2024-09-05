@@ -11,6 +11,7 @@ in
   imports = [
     inputs.spicetify-nix.nixosModules.default
     ./hardware-configuration.nix
+    ./modules/default.nix
   ];
 
   services.xserver = {
@@ -62,11 +63,11 @@ in
     ];
   };
 
-  nixpkgs.config.packageOverrides = pkgs: {
-    nur = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/master.tar.gz") {
-      inherit pkgs;
-    };
-  };
+  # nixpkgs.config.packageOverrides = pkgs: {
+  #   nur = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/master.tar.gz") {
+  #     inherit pkgs;
+  #   };
+  # };
 
   # Unfree
 
@@ -98,15 +99,14 @@ in
       #  }))
 
       # Imports
-      (pkgs.callPackage /home/moon/.config/Bin/NixOs/finder.nix { })
-      (pkgs.callPackage /home/moon/.config/Bin/NixOs/unpack.nix { })
-      (pkgs.callPackage /home/moon/.config/Bin/NixOs/pack.nix { })
-      (pkgs.callPackage /home/moon/.config/Bin/NixOs/dwmbar.nix { })
-      (pkgs.callPackage /home/moon/.config/Bin/NixOs/video2wav.nix { })
-      (pkgs.callPackage /home/moon/.config/Bin/NixOs/c.nix { })
-      (pkgs.callPackage /home/moon/.config/Bin/NixOs/ch-mac.nix { })
-      (pkgs.callPackage /home/moon/.config/Bin/NixOs/waller.nix { })
-      (pkgs.callPackage /home/moon/.config/Bin/NixOs/a.nix { })
+      # (pkgs.callPackage ./homes/scripts/unpack.nix)
+      # (pkgs.callPackage ./homes/scripts/pack.nix { })
+      # (pkgs.callPackage ./homes/scripts/dwmbar.nix { })
+      # (pkgs.callPackage ./homes/scripts/video2wav.nix { })
+      # (pkgs.callPackage ./homes/scripts/c.nix { })
+      # (pkgs.callPackage ./homes/scripts/ch-mac.nix { })
+      # (pkgs.callPackage ./homes/scripts/waller.nix { })
+      # (pkgs.callPackage ./homes/scripts/a.nix { })
 
       nh
       yazi
