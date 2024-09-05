@@ -99,14 +99,10 @@ in
       #  }))
 
       # Imports
-      # (pkgs.callPackage ./homes/scripts/unpack.nix)
-      # (pkgs.callPackage ./homes/scripts/pack.nix { })
-      # (pkgs.callPackage ./homes/scripts/dwmbar.nix { })
-      # (pkgs.callPackage ./homes/scripts/video2wav.nix { })
-      # (pkgs.callPackage ./homes/scripts/c.nix { })
-      # (pkgs.callPackage ./homes/scripts/ch-mac.nix { })
-      # (pkgs.callPackage ./homes/scripts/waller.nix { })
-      # (pkgs.callPackage ./homes/scripts/a.nix { })
+      (pkgs.callPackage ./homes/scripts/unpack.nix)
+      (pkgs.callPackage ./homes/scripts/pack.nix { })
+      (pkgs.callPackage ./homes/scripts/ch-mac.nix { })
+      (pkgs.callPackage ./homes/scripts/a.nix { })
 
       nh
       yazi
