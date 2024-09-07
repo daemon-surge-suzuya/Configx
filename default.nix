@@ -99,10 +99,11 @@ in
       #  }))
 
       # Imports
-      (pkgs.callPackage ./homes/scripts/unpack.nix)
+      (pkgs.callPackage ./homes/scripts/unpack.nix { })
       (pkgs.callPackage ./homes/scripts/pack.nix { })
       (pkgs.callPackage ./homes/scripts/ch-mac.nix { })
       (pkgs.callPackage ./homes/scripts/a.nix { })
+      (pkgs.callPackage ./homes/scripts/finder.nix { })
 
       nh
       yazi
