@@ -5,9 +5,9 @@
 return {
   "AstroNvim/astrocommunity",
   { import = "astrocommunity.pack.lua" },
-  { import = "astrocommunity.colorscheme.rose-pine" },
-  { import = "astrocommunity.git/git-blame-nvim", enabled = true }, 
-  { import = "astrocommunity.utility/noice-nvim", enabled = true },
+  { import = "astrocommunity.git.git-blame-nvim", enabled = true }, 
+  { import = "astrocommunity.utility.noice-nvim", enabled = true },
+  { import = "astrocommunity.colorscheme.catppuccin"},
   { "andweeb/presence.nvim",
   config = function()
    require("presence").setup({
@@ -35,4 +35,18 @@ return {
   end,
   
   },
+
+   { -- further customize the options set by the community
+    "catppuccin",
+    opts = {
+    flavour = "mocha", -- latte, frappe, macchiato, mocha
+    transparent_background = true, -- disables setting the background color.
+    dim_inactive = {
+        enabled = true, -- dims the background color of inactive window
+        shade = "dark",
+        percentage = 0.15, -- percentage of the shade to apply to the inactive window
+    },
+  },
+  },
+
 }

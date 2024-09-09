@@ -4,8 +4,10 @@
 
   boot = {
 
-    loader.systemd-boot.enable = true;
-    loader.efi.canTouchEfiVariables = true;
+    loader = {
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+    };
     extraModulePackages = with config.boot.kernelPackages ; [ rtl88xxau-aircrack ];
     blacklistedKernelModules = [ "nouveau" ];
     # kernelPackages = pkgs.linuxPackages_latest;

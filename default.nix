@@ -21,11 +21,13 @@ in
       bspwm.enable = true;
       dwm.enable = false;
       i3.enable = false;
+
     };
+
+    displayManager.sddm.enable = true;
 
   };
 
-  services.displayManager.sddm.enable = true;
   programs.hyprland.enable = false;
 
   # Nix Configuration
