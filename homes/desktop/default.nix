@@ -1,6 +1,6 @@
 _: {
   imports = [
   ./bspwm
-  # ./hyprland
+#  ./hyprland
   ];
 }

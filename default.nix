@@ -28,7 +28,7 @@ in
 
   };
 
-  programs.hyprland.enable = false;
+ # programs.hyprland.enable = true;
 
   # Nix Configuration
 
@@ -106,6 +106,7 @@ in
       (pkgs.callPackage ./homes/scripts/ch-mac.nix { })
       (pkgs.callPackage ./homes/scripts/a.nix { })
       (pkgs.callPackage ./homes/scripts/finder.nix { })
+      (pkgs.callPackage ./homes/scripts/upload.nix { })
 
       nh
       yazi
