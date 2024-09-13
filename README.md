@@ -10,7 +10,7 @@ Using [Nix](https://nixos.org/) and [Home-Manager](https://github.com/nix-commun
 - Terminal: [alacritty](https://alacritty.org/)
 - Notification Daemon: [dunst](https://dunst-project.org/)
 
-![Home-Page](./assets/Astronaut.jpg)
+![Home-Page](./assets/home.png)
 
 ## Installation
 
