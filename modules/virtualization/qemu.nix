@@ -1,5 +1,6 @@
 {pkgs, ...}: {
   virtualisation = {
+
     libvirtd = {
       enable = true;
       qemu = {
@@ -8,12 +9,16 @@
         '';
       };
     };
+    
     spiceUSBRedirection.enable = true;
+  
   };
+
+  programs.virt-manager.enable = true;
+  programs.dconf.enable = true;
 
   environment = {
     systemPackages = with pkgs; [
-      virt-manager
       virt-viewer
       qemu
       OVMF

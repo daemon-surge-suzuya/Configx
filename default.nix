@@ -16,6 +16,8 @@ in
 
   services.xserver = {
 
+    enable = true;
+
     windowManager = {
 
       bspwm.enable = true;
@@ -25,6 +27,11 @@ in
     };
 
     displayManager.sddm.enable = true;
+ 
+    xkb = {
+      layout = "us";
+      variant = "";
+    };
 
   };
 
@@ -186,30 +193,41 @@ in
 
   # Etc
 
-  programs.adb.enable = true;
-  programs.fish.enable = true;
-  services.flatpak.enable = true;
-  services.printing.enable = true;
-  security.rtkit.enable = true;
-  programs.dconf.enable = true;
-  hardware.pulseaudio.enable = false;
-  hardware.bluetooth.enable = true;
-  hardware.bluetooth.powerOnBoot = true;
-  services.blueman.enable = true;
-  sound.enable = true;
-  services.automatic-timezoned.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    # jack.enable = true;
-    # use the example session manager (no others are packaged yet, so this is enabled by default,
-    # no need to redefine it in your config for now)
-    # media-session.enable = true;
+  services = {
+    
+    flatpak.enable = true;
+    printing.enable = true;
+    blueman.enable = true;
+    automatic-timezoned.enable = true;
+    libinput.enable = true;
+
+    pipewire = {
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+    }; 
+
   };
 
+  hardware = {
+
+    pulseaudio.enable = false;
+    bluetooth.enable = true;
+    bluetooth.powerOnBoot = true;
+  
+  };
+
+  programs = {
+    
+    adb.enable = true;
+    fish.enable = true;
+    dconf.enable = true;
+  
+  };
+
+  sound.enable = true;
+  security.rtkit.enable = true;
 
   # Drives Configuration
 
