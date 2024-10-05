@@ -238,9 +238,11 @@ in
 
   # Time Zone and Internationalization Settings
 
-  time.timeZone = "Africa/Kampala";
+  time.timeZone = "Asia/Kolkata";
   i18n.defaultLocale = "en_US.UTF-8";
   i18n.extraLocaleSettings = {
+    LANGUAGE = "en_US.UTF-8";
+    LC_ALL = "en_US.UTF-8";
     LC_ADDRESS = "lg_UG.UTF-8";
     LC_IDENTIFICATION = "en_US.UTF-8";
     LC_MEASUREMENT = "en_US.UTF-8";
