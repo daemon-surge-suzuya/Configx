@@ -149,7 +149,6 @@ in
       vesktop
       pdfmm
       tor-browser
-      thunderbird
     ];
   };
 

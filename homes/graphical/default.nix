@@ -12,5 +12,6 @@ _: {
     ./lf
     ./firefox
     ./yazi.nix
+    ./redshift.nix
   ];
 }
