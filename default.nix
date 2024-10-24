@@ -149,6 +149,7 @@ in
       vesktop
       pdfmm
       tor-browser
+      onlyoffice-bin_latest
     ];
   };
 
@@ -195,7 +196,10 @@ in
   services = {
     
     flatpak.enable = true;
-    printing.enable = true;
+    printing = {
+      enable = true;
+      drivers = with pkgs ; [ hplip ];
+    };
     blueman.enable = true;
     automatic-timezoned.enable = true;
     libinput.enable = true;
@@ -210,11 +214,19 @@ in
   };
 
   hardware = {
-
+    printers = {
+      ensurePrinters = [{
+        name = "hp-smart_tank_580-590_series";
+        location = "Home";
+        deviceUri =
+          "usb://HP/Smart%20Tank%20580-590%20series?serial=TH44B6W0W7&interface=1";
+        model = "drv:///hp/hpcups.drv/hp-smart_tank_580-590_series.ppd";
+        ppdOptions = { PageSize = "A4"; };
+      }];
+    };
     pulseaudio.enable = false;
     bluetooth.enable = true;
     bluetooth.powerOnBoot = true;
-  
   };
 
   programs = {

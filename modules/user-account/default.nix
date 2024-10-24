@@ -6,7 +6,7 @@
     shell = pkgs.fish;
     isNormalUser = true;
     description = "moon";
-    extraGroups = [ "networkmanager" "wheel" "wireshark" "adbusers" "libvirtd" ];
+    extraGroups = [ "lp" "scanner" "networkmanager" "wheel" "wireshark" "adbusers" "libvirtd" ];
     packages = with pkgs; [
       # Uncomment packages you want to install for the user.
       # firefox
