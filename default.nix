@@ -114,7 +114,9 @@ in
       (pkgs.callPackage ./homes/scripts/a.nix { })
       (pkgs.callPackage ./homes/scripts/finder.nix { })
       (pkgs.callPackage ./homes/scripts/upload.nix { })
+      (pkgs.callPackage ./homes/scripts/idleLock.nix { })
 
+      gnome.evince
       nh
       yazi
       curl
@@ -280,10 +282,14 @@ in
     '';
   };
 
-  xdg.portal = {
+  xdg = {
+  
+  portal = {
     enable = true;
     config.common.default = "*";
     extraPortals = with pkgs; [ xdg-desktop-portal-gtk ];
+  };
+
   };
 
   # Network Configuration

@@ -1,5 +1,6 @@
 _: {
   imports = [
+    ./xdg.nix
     ./direnv.nix
     ./fish.nix
     ./git.nix
