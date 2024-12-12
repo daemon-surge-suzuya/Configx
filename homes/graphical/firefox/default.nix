@@ -23,7 +23,6 @@
       decentraleyes
       duckduckgo-privacy-essentials
       disconnect
-      tabliss
       proton-vpn
 
     ];

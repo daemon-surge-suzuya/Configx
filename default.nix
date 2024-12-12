@@ -25,8 +25,6 @@ in
       i3.enable = false;
 
     };
-
-    displayManager.sddm.enable = true;
  
     xkb = {
       layout = "us";
@@ -34,6 +32,8 @@ in
     };
 
   };
+
+    services.displayManager.sddm.enable = true;
 
  # programs.hyprland.enable = true;
 
@@ -98,6 +98,8 @@ in
           sha256 = "YiuLScDV9UfgI1MiYRtjgRkJ0VuA1TExATA2nJSJMhM=";
         };
         buildInputs = o.buildInputs ++ [ pkgs.pcre ];
+        nativeBuildInputs = o.nativeBuildInputs ++ [ pkgs.asciidoc ];
+        doInstallCheck = false;
       }))
 
       # (dwm.overrideAttrs (oldAttrs: rec {
@@ -116,7 +118,7 @@ in
       (pkgs.callPackage ./homes/scripts/upload.nix { })
       (pkgs.callPackage ./homes/scripts/idleLock.nix { })
 
-      gnome.evince
+      # asciidoc
       nh
       yazi
       curl
@@ -132,16 +134,12 @@ in
       file
       obs-studio
       librewolf
-      # spotify
       ani-cli
       ffmpeg-full
       sxiv
       xwinwrap
       redshift
-      cmus
-      ueberzug
       brave
-      gnome.gnome-calculator
       element-desktop
       btop
       libnotify
@@ -149,7 +147,6 @@ in
       xorg.xdpyinfo
       xclip
       vesktop
-      pdfmm
       tor-browser
       onlyoffice-bin_latest
     ];
@@ -203,7 +200,7 @@ in
       drivers = with pkgs ; [ hplip ];
     };
     blueman.enable = true;
-    automatic-timezoned.enable = true;
+    automatic-timezoned.enable = false;
     libinput.enable = true;
 
     pipewire = {
@@ -239,7 +236,7 @@ in
   
   };
 
-  sound.enable = true;
+  # sound.enable = true;
   security.rtkit.enable = true;
 
   # Drives Configuration
@@ -304,6 +301,6 @@ in
 
   # State Version
 
-  system.stateVersion = "24.05";
+  system.stateVersion = "24.11";
 
 }

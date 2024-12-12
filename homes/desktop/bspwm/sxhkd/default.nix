@@ -13,20 +13,16 @@ _: {
         "super + x" = "i3lock-fancy";
         "super + shift + u" = "flameshot gui";
         "super + Return" = "kitty";
-        "super + c" = "gnome-calculator";
         "super + Escape" = "pkill -USR1 -x sxhkd";
         "super + e" = "element-desktop";
         
-        "alt + shift + e" = "thunderbird";
         "alt + shift + t" = "tor-browser";
-        "alt + p" = "pdfmm";
         "alt + g" = "guvcview";
         "alt + o" = "obs";
         "alt + t" = "thunar";
-        "alt + c" = "code";
         "alt + n" = "obsidian";
         "alt + a" = "alacritty -e nvim";
-        "alt + l" = "kitty -e lf";
+        "alt + l" = "kitty -e yazi";
         "alt + shift + p" = "pavucontrol";
         "super + ctrl + shift + r" = "bash ~/1TB/GitHub/Bin/recorder.sh -s";
         "super + ctrl + shift + a" = "bash ~/1TB/GitHub/Bin/recorder.sh -b";

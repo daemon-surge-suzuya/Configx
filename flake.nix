@@ -4,7 +4,7 @@
 
   inputs = {
 
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
 
     nur = { url = "github:nix-community/NUR"; };
 
@@ -14,7 +14,7 @@
     };
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-24.05";
+      url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -26,17 +26,18 @@
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
         modules = [
-          nur.nixosModules.nur
+          # nur.nixosModules.nur
+          nur.modules.nixos.default
           ./default.nix
 
           home-manager.nixosModules.home-manager
           {
 
-            nixpkgs.overlays = [ nur.overlay ];
+            nixpkgs.overlays = [ nur.overlays.default ];
             home-manager.useGlobalPkgs = true;
 
             home-manager.users.moon = {
-              imports = [ ./home.nix ./homes inputs.nur.hmModules.nur ];
+              imports = [ ./home.nix ./homes inputs.nur.modules.homeManager.default ];
             };
           }
         ];

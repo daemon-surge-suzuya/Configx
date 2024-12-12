@@ -1,6 +1,18 @@
 { config, lib, ... }:
 
 {
+  #
+  # services.openvpn.servers = {
+  #   japan = {
+  #     config = '' ~/.config/vpn/jp.ovpn '';
+  #   };
+  #   us = {
+  #     config = '' ~/.config/vpn/us.ovpn '';
+  #   };
+  #   nl = {
+  #     config = '' ~/.config/vpn/nl.ovpn '';
+  #   };
+  # };
 
   networking = {
 
@@ -13,6 +25,7 @@
 
     # Firewall Configuration
     firewall.enable = true;
+    firewall.checkReversePath = false; 
     # firewall.allowedTCPPorts = [ ... ];
     # firewall.allowedUDPPorts = [ ... ];
   };
