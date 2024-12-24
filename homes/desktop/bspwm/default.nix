@@ -16,6 +16,7 @@ imports = [
       "redshift"
       "flameshot"
       "nitrogen --restore"
+      "idleLock 60 'i3lock-fancy'"
     ];
 
     monitors = {
