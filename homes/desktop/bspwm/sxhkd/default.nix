@@ -27,7 +27,7 @@ _: {
         "super + ctrl + shift + r" = "bash ~/1TB/GitHub/Bin/recorder.sh -s";
         "super + ctrl + shift + a" = "bash ~/1TB/GitHub/Bin/recorder.sh -b";
         "super + ctrl + shift + s" = "bash ~/1TB/GitHub/Bin/recorder.sh -a";
-        "super + ctrl + shift + m" = "bash ~/1TB/GitHub/Bin/recorder.sh -m"
+        "super + ctrl + shift + m" = "bash ~/1TB/GitHub/Bin/recorder.sh -m";
         "super + ctrl + shift + k" = "pkill ffmpeg && notify-send 'Recording has stopped' 'Killed FFMPEG'";
         "super + alt + i" = "brightnessctl set 1%+";
         "super + alt + o" = "brightnessctl set 1%-";

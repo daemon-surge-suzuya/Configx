@@ -6,5 +6,6 @@ _: {
     ./thunar
     ./user-account
     ./virtualization
+    ./ssh
   ];
 }
