@@ -118,7 +118,6 @@ in
       (pkgs.callPackage ./homes/scripts/upload.nix { })
       (pkgs.callPackage ./homes/scripts/idleLock.nix { })
 
-      # asciidoc
       nh
       yazi
       curl
@@ -131,7 +130,7 @@ in
       guvcview
       brightnessctl
       flameshot
-      file
+      # file
       obs-studio
       librewolf
       ani-cli
@@ -143,12 +142,12 @@ in
       element-desktop
       btop
       libnotify
-      discord
       xorg.xdpyinfo
       xclip
       vesktop
       tor-browser
-      onlyoffice-bin_latest
+      proton-pass
+      protonmail-desktop
     ];
   };
 

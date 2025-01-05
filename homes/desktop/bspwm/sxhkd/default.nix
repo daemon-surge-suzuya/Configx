@@ -14,21 +14,26 @@ _: {
         "super + shift + u" = "flameshot gui";
         "super + Return" = "kitty";
         "super + Escape" = "pkill -USR1 -x sxhkd";
-        "super + e" = "element-desktop";
         
+        "alt + shift + e" = "element-desktop";
+        "alt + p" = "pavucontrol";
         "alt + shift + t" = "tor-browser";
+        "alt + super + p" = "protonmail-desktop";
+        
+        "alt + p" = "proton-pass";
         "alt + g" = "guvcview";
         "alt + o" = "obs";
         "alt + t" = "thunar";
         "alt + n" = "obsidian";
         "alt + a" = "alacritty -e nvim";
         "alt + l" = "kitty -e yazi";
-        "alt + shift + p" = "pavucontrol";
+
         "super + ctrl + shift + r" = "bash ~/1TB/GitHub/Bin/recorder.sh -s";
         "super + ctrl + shift + a" = "bash ~/1TB/GitHub/Bin/recorder.sh -b";
         "super + ctrl + shift + s" = "bash ~/1TB/GitHub/Bin/recorder.sh -a";
         "super + ctrl + shift + m" = "bash ~/1TB/GitHub/Bin/recorder.sh -m";
         "super + ctrl + shift + k" = "pkill ffmpeg && notify-send 'Recording has stopped' 'Killed FFMPEG'";
+
         "super + alt + i" = "brightnessctl set 1%+";
         "super + alt + o" = "brightnessctl set 1%-";
         "super + alt + shift + x" = "bash ~/.scripts/cam.sh rmmod -f uvcvideo && dunstify 'Unloading uvcvideo module' 'Disabling Camera'";
