@@ -20,12 +20,20 @@ if [ ! -f "$FILE" ]; then
   exit 1
 fi
 
+FILE_SIZE=$(du -h "$FILE" | cut -f1)
+notify-send "File Upload Started" "File size: $FILE_SIZE"
+
 RESPONSE=$(curl -F "file=@$FILE" -F "expires=$EXPIRES" https://0x0.st)
 
 if [ -n "$RESPONSE" ]; then
-  echo "File uploaded successfully: $RESPONSE"
+  echo "File uploaded successfully!"
+  echo "Link: $RESPONSE"
+  echo -n "$RESPONSE" | xclip -selection clipboard
+  dunstify "Upload Successful" "The link has been copied to your clipboard."
 else
-  echo "Error: Failed to upload file."
+  dunstify "Upload Failed!" "Error: Failed to upload file."
   exit 1
 fi
+
+
 ''

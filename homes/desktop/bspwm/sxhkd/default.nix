@@ -16,7 +16,7 @@ _: {
         "super + Escape" = "pkill -USR1 -x sxhkd";
         
         "alt + shift + e" = "element-desktop";
-        "alt + p" = "pavucontrol";
+        "alt + shift + p" = "pavucontrol";
         "alt + shift + t" = "tor-browser";
         "alt + super + p" = "protonmail-desktop";
         

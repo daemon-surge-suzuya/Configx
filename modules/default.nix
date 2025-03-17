@@ -5,7 +5,7 @@ _: {
     ./networking
     ./thunar
     ./user-account
-    ./virtualization
+    # ./virtualization
     ./ssh
   ];
 }
