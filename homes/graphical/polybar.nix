@@ -139,7 +139,7 @@
           font-1 = "Hack:size=12";
           modules-left = "menu bspwm";
           modules-center = "xwindow";
-          modules-right = "battery memory cpu wireless-network pipewire date";
+          modules-right = " temperature cpu battery memory wireless-network pipewire date";
           cursor-click = "pointer";
           cursor-scroll = "ns-resize";
           enable-ipc = true;
@@ -211,6 +211,7 @@
           interval = 2;
           label-foreground = "${colors.mocha-peach}";
           label = "%percentage_used%%";
+          label-underline = "${colors.mocha-peach}";
         };
 
         "module/battery" = {
@@ -221,10 +222,13 @@
           adapter = "AC";
           label-full = "%percentage%% ";
           label-full-foreground = "${colors.frappe-mauve}";
+          label-full-underline = "${colors.frappe-mauve}";
           label-charging = "%percentage%% ";
           label-charging-foreground = "${colors.frappe-mauve}";
+          label-charging-underline = "${colors.frappe-mauve}";
           label-discharging = "%percentage%% ";
           label-discharging-foreground = "${colors.mocha-pink}";
+          label-discharging-underline = "${colors.mocha-pink}";
         };
 
         "module/cpu" = {
@@ -232,6 +236,7 @@
           interval = 2;
           format-prefix-foreground = "${colors.mocha-text}";
           label-foreground = "${colors.mocha-red}";
+          label-underline = "${colors.mocha-red}";
           label = "%{T3}%{T-} %percentage%%";
         };
 
@@ -244,12 +249,14 @@
           label-connected = "%ifname%";
           label-connected-background = "${colors.mocha-crust}";
           label-connected-foreground = "${colors.mocha-green}";
+          label-connected-underline = "${colors.mocha-green}";
           label-connected-padding = 1;
 
           format-disconnected = "<label-disconnected>";
           label-disconnected = "Offline";
           label-disconnected-background = "${colors.mocha-crust}";
           label-disconnected-foreground = "${colors.mocha-red}";
+          label-disconnected-underline = "${colors.mocha-red}";
           label-disconnected-padding = 1;
         };
 
@@ -260,15 +267,20 @@
           date-alt = "%d-%m-%Y %I:%M %p";
           label = "%date%";
           label-foreground = "${colors.mocha-sky}";
+          label-underline = "${colors.mocha-sky}";
         };
 
         "module/temperature" = {
           type = "internal/temperature";
-          interval = 1;
+          interval = 2;
           zone-type = "x86_pkg_temp";
           hwmon-path = "/sys/devices/platform/coretemp.0/hwmon/hwmon4/temp1_input";
           base-temperature = 20;
           warn-temperature = 70;
+          units = true;
+          label = "%temperature-c%";
+          label-foreground = "${colors.latte-rosewater}";
+          label-underline = "${colors.latte-rosewater}";
         };
 
         "settings" = {
