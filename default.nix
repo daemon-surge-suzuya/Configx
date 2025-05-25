@@ -157,9 +157,10 @@ in
     packages = with pkgs; [
       noto-fonts
       noto-fonts-emoji
-      font-awesome
-      source-han-sans
-      (nerdfonts.override { fonts = [ "Meslo" ]; })
+      # font-awesome
+      # source-han-sans
+      nerd-fonts.meslo-lg
+      # (nerdfonts.override { fonts = [ "Meslo" ]; })
     ];
     fontconfig = {
       defaultFonts = {
