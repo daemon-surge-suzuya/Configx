@@ -8,7 +8,7 @@ _: {
   opacity = 0.9;
   };
   
-  shell = {
+  terminal.shell = {
   program = "fish";
   };
   
